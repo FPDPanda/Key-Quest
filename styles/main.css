@@ -53,8 +53,6 @@ main {
 
     border-radius: 2rem;
 
-    font-size: 3rem;
-
     display: flex;
     justify-self: center;
     align-self: center;
@@ -62,6 +60,8 @@ main {
     justify-content: center;
 
     transition-duration: 0.3s;
+
+    overflow: clip;
 }
 
 .game button img {
@@ -73,9 +73,13 @@ main {
     transition-duration: 0.2s;
 }
 
+.game button text {
+    font-size: 2rem
+}
+
 
 /* Media queries */
-@media (max-width: 800px) {
+@media (max-width: 900px) {
     .game {
         width: 100vw;
         height: 100vh;
