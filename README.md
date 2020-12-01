@@ -1,1 +1,3 @@
 # Key-Quest
+
+For fun
