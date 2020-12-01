@@ -1,6 +1,6 @@
 /* Main BG (green) */
 main {
-    background: linear-gradient(3deg, #0c3f0c, #1f3627, #113a03, #0f4d0e, #133f2f);
+    background: linear-gradient(3deg, #10122e, #153a22, #074118, #112341, #1e2e21);
     background-size: 1000% 1000%;
 
     -webkit-animation: AnimationName 30s ease infinite;
