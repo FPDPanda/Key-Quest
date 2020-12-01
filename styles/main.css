@@ -77,8 +77,8 @@ main {
 /* Media queries */
 @media (max-width: 800px) {
     .game {
-        width: 90vw;
-        height: 90vh;
+        width: 100vw;
+        height: 100vh;
 
         overflow: hidden;
     }
