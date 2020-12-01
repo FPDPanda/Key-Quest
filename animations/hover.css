@@ -1,0 +1,13 @@
+.game button:hover {
+    transform: translateY(-10%);
+
+    cursor: pointer;
+}
+
+.game button text:hover {
+    text-decoration: underline;
+}
+
+.game button img:hover {
+    transform: rotate(-7deg)
+}

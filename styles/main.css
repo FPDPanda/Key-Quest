@@ -1,0 +1,111 @@
+/* Resetting the browser properties */
+* {
+    margin: 0;
+    padding: 0;
+
+    font-size: 16px;
+    font-family: 'Texturina', sans-serif;
+}
+
+main {
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game {
+    width: 80vw;
+    height: 80vh;
+    background-image: url("../images/bg/night-forest.png");
+    background-size: contain;
+
+    display: grid;
+    grid-template-areas: "explore tavern"
+                          "armory knight";
+}
+
+ /* Placing the buttons in their grid areas */
+#explore {grid-area: 'explore'}
+
+#tavern {grid-area: 'tavern'}
+
+#armory {grid-area: 'armory'}
+
+#knight {
+    grid-area: 'knight';
+    background-image: url(../images/bg/knight.gif);
+    background-size: 30%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+/* Button styles */
+.game button {
+    padding: 3rem;
+    border: 3px solid #888;
+    background-color: #fff;
+    width: clamp(20vw, 25vw, 30vw);
+    max-height: 30vh;
+
+    border-radius: 2rem;
+
+    font-size: 3rem;
+
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+
+    transition-duration: 0.3s;
+}
+
+.game button img {
+    height: 10vh;
+    width: auto;
+
+    margin-right: 2vw;
+    
+    transition-duration: 0.2s;
+}
+
+
+/* Media queries */
+@media (max-width: 800px) {
+    .game {
+        width: 90vw;
+        height: 90vh;
+
+        overflow: hidden;
+    }
+
+    .game button {
+        width: 80%;
+        min-width: 90px;
+
+        flex-direction: column;
+
+        overflow: hidden;
+    }
+
+    .game button img {
+        width: 15vw;
+        height: auto;
+        margin: 0;
+    }
+
+    .game button text {
+        font-size: 2rem;
+        margin-top: 1vh;
+    }
+
+    #armory {
+        margin-top: 0;
+    }
+}
+
+
