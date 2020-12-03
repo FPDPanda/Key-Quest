@@ -22,6 +22,7 @@ a {
     border-radius: 2rem;
 
     width: 100%;
+    min-width: 250px;
     height: 10vh;
     background-color: #ccc;
 
@@ -31,8 +32,8 @@ a {
 }
 
 .game {
-    width: 95vw;
-    height: 95vh;
+    width: 98vw;
+    height: 96vh;
     background-image: url("../images/bg/night-forest.png");
     background-size: cover;
 
@@ -86,7 +87,6 @@ a {
     height: 10vh;
     width: auto;
 
-    margin-right: 2vw;    
     transition-duration: 0.2s;
 }
 
@@ -95,7 +95,7 @@ a {
 }
 
 #escapeContainer {
-    width: 50%;
+    width: clamp(30%, 35%, 45%);
     background-color: rgb(255, 53, 53);
     justify-self: right;
     margin: 5rem;
@@ -106,6 +106,7 @@ a {
     color: #fff;
     flex-flow: row-reverse;
     align-self: right;
+    justify-content: space-around;
 }
 
 
@@ -122,9 +123,12 @@ a {
         min-width: 150px;
     }
 
+    #escapeContainer__button img {
+        display: none;
+    }
+
     .button {
         flex-direction: column;
-
         overflow: hidden;
     }
 
@@ -132,14 +136,5 @@ a {
         width: 15vw;
         height: auto;
         margin: 0;
-    }
-
-    .button text {
-        font-size: 2rem;
-        margin-top: 1vh;
-    }
-
-    #armory {
-        margin-top: 0;
     }
 }
