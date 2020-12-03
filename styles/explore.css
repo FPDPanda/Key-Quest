@@ -27,8 +27,8 @@ a {
 }
 
 .game {
-    width: 98vw;
-    height: 96vh;
+    width: 100%;
+    height: 100%;
     background-image: url("../images/bg/night-forest.png");
     background-size: cover;
 
@@ -110,13 +110,9 @@ a {
     .game {
         width: 100vw;
         height: 100vh;
-
         overflow: hidden;
-        
-        grid-template-rows: 1fr 0.1fr 1fr;
-        grid-template-areas:'box box'
-                            'escape escape'
-                            'monster monster';
+        grid-template-rows: 1fr 10vh 1fr;
+        grid-template-areas:'box box''escape escape''monster monster';
     }
 
     a {
@@ -127,12 +123,13 @@ a {
     #escapeContainer {
         grid-area: escape;
         justify-self: center;
+        margin: 0;
+        margin-top: 10px;
     }
 
     #monster {
         grid-area: monster;
     }
-
     #escapeContainer__button img {
         display: none;
     }
