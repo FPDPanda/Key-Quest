@@ -115,7 +115,7 @@ a {
         width: 100vw;
         height: 100vh;
         overflow: hidden;
-        grid-template-rows: 1fr 10vh 1fr;
+        grid-template-rows: 1fr 20vh 1fr;
         grid-template-areas:'box box''escape escape''monster monster';
     }
 
