@@ -24,7 +24,6 @@ a {
     width: 100%;
     min-width: 250px;
     height: 10vh;
-    background-color: #ccc;
 
     display: flex;
     align-self: top;
@@ -96,7 +95,6 @@ a {
 
 #escapeContainer {
     width: clamp(30%, 35%, 45%);
-    background-color: rgb(255, 53, 53);
     justify-self: right;
     margin: 5rem;
 }
