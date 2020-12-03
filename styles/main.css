@@ -39,14 +39,6 @@ a {
                           "armory knight";
 }
 
-#knight {
-    background-image: url("../images/bg/knight.gif");
-    background-size: 20vh;
-    background-repeat: no-repeat;
-    background-position: center bottom 1.5vh;
-}
-
-
 /* Button styles */
 .button {
     padding: 3rem;
@@ -114,5 +106,3 @@ a {
         margin-top: 0;
     }
 }
-
-

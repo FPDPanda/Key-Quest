@@ -1,0 +1,7 @@
+#monster {
+    background-image: url("../images/monsters/goblin__idle.gif");
+    background-size: 20vh;
+    background-repeat: no-repeat;
+    background-position: center bottom 1.5vh;
+    -webkit-transform: scaleX(-1);
+}

@@ -4,22 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/explore.css">
+    <link rel="stylesheet" href="../styles/text_colors.css">
     <link rel="stylesheet" href="../animations/background.css">
     <link rel="stylesheet" href="../animations/hover.css">
+    <link rel="stylesheet" href="../animations/monster.css">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Texturina:wght@600;800&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Texturina:wght@600;800&display=swap" rel="stylesheet"> 
 
     <title>Key Quest</title>
-    <link rel="icon" href="./images/icons/key.png">
+    <link rel="icon" href="../images/icons/key.png">
 </head>
 <body>
     <main>  
         <div class="game">
-            <a href="../pages/explore.html"><button class="button" id="button__explore"><img src="../images/icons/explore.png" alt="swords"><text>Explore</text></button></a>
-            <a><button class="button" id="button__tavern"><img src="../images/icons/tavern.png" alt="swords"><text>Tavern</text></button></a>
-            <a><button class="button" id="button__armory"><img src="../images/icons/armory.png" alt="swords"><text>Armory</text></button></a>
+            <div class="box">
+                <div class="box__text">
+                    <p>Adventuring through the woods you found a <span class="green">Goblin<span>!<p>
+                    <p>It looks angry<p>
+                </div>
+                <a><button class="button" id="button__tavern"><text>Continue</text></button></a>
+            </div>            
+            <a id="escapeContainer" href="../index.html"><button class="button" id="escapeContainer__button"><img src="../images/icons/escape.png" alt="escape button"><text>Run away</text></button></a>
         <div id="monster"></div>
         </div>
         </div>
