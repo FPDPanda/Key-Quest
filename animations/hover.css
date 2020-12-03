@@ -1,5 +1,5 @@
 .button:hover {
-    transform: translateY(-10%);
+    transform: translateY(-0.5rem);
 
     background-color: #dddddd;
     box-shadow: 0 0.5rem 2px -2px #888;

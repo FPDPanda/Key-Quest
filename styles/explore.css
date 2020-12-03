@@ -20,14 +20,10 @@ main {
 a {
     text-decoration: none;
     border-radius: 2rem;
-
-    width: 100%;
+    
     min-width: 250px;
     height: 10vh;
 
-    display: flex;
-    align-self: top;
-    justify-content: right;
 }
 
 .game {
@@ -103,7 +99,6 @@ a {
     background-color: #ff4444;
     color: #fff;
     flex-flow: row-reverse;
-    align-self: right;
     justify-content: space-around;
 }
 
@@ -115,24 +110,28 @@ a {
         height: 100vh;
 
         overflow: hidden;
+        
+        grid-template-rows: 1fr 0.1fr 1fr;
+        grid-template-areas:'box box'
+                            'escape escape'
+                            'monster monster';
     }
 
     a {
-        min-width: 150px;
+        margin: 0;
+        margin-top: 5px;
+    }
+
+    #escapeContainer {
+        grid-area: escape;
+        justify-self: center;
+    }
+
+    #monster {
+        grid-area: monster;
     }
 
     #escapeContainer__button img {
         display: none;
-    }
-
-    .button {
-        flex-direction: column;
-        overflow: hidden;
-    }
-
-    .button img {
-        width: 15vw;
-        height: auto;
-        margin: 0;
     }
 }
