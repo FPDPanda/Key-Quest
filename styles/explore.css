@@ -23,6 +23,9 @@ a {
     
     min-width: 250px;
     height: 10vh;
+    min-height: 50px;
+
+    align-items: center;
 
 }
 
@@ -31,6 +34,7 @@ a {
     height: 100%;
     background-image: url("../images/bg/night-forest.png");
     background-size: cover;
+    background-repeat: repeat-x;
 
     display: grid;
     grid-template-areas: "box escape"
@@ -54,7 +58,7 @@ a {
 .box__text {
     padding: 2rem;
     font-size: 20px;
-    max-height: 30vh;
+    height: clamp(40vh, 60vh, 70vh);
     border-radius: 2rem;
     background-color: #fff;
 
@@ -113,6 +117,14 @@ a {
         overflow: hidden;
         grid-template-rows: 1fr 10vh 1fr;
         grid-template-areas:'box box''escape escape''monster monster';
+    }
+
+    .box {
+        min-height: 20vh;
+    }
+
+    .box__text {
+        max-height: 30vh;
     }
 
     a {
