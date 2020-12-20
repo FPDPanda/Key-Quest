@@ -1,4 +1,4 @@
-let health = localStorage.getItem('health');
+let stats = JSON.parse(localStorage.getItem("stats"));
 
 const button__continue = document.getElementById("button__continue");
 
@@ -7,7 +7,7 @@ button__continue.addEventListener("click", function() {
 });
 
 function fight() {
-    health--;
-    alert("Your health is now " + health);
-    localStorage.setItem('health', health);
+    stats.health--;
+    alert("Your health is now " + stats.health);
+    localStorage.setItem('stats', JSON.stringify(stats));
 };
