@@ -9,5 +9,5 @@ button__continue.addEventListener("click", function() {
 function fight() {
     stats.health--;
     alert("Your health is now " + stats.health);
-    localStorage.setItem('stats', JSON.stringify(stats));
+    localStorage.setItem("stats", JSON.stringify(stats));
 };
