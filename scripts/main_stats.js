@@ -6,11 +6,7 @@ window.addEventListener("load", setStats({
     weapons: ['dagger']
 }));
 
-// This is the function that will set all the stats, then it turns this function into an empty function NOOP, making it so the main stats will only be set once.
+// This is the function that will set all the stats once.
 function setStats(stats) {
-    localStorage.setItem("stats", JSON.stringify(stats));
-    setStats = noop;
+    localStorage.getItem("stats")? 0 : localStorage.setItem("stats", JSON.stringify(stats));
 };
-
-// This is an empty function (NO OPERATION)
-function noop() {};
