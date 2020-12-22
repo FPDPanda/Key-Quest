@@ -31,9 +31,9 @@ buttonContinue.addEventListener("click", function() {
 function fight() {
     stats.health--;
     addHurt.textContent = "You were hurt!";
-    addtext(addHurt);
+    addText(addHurt);
     addHealth.textContent = "Your health is now " + stats.health;
-    addtext(addHealth);
+    addText(addHealth);
     localStorage.setItem("stats", JSON.stringify(stats));
 };
 
