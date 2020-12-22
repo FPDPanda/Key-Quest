@@ -13,9 +13,11 @@ const buttonContinue = document.getElementById("button__continue");
 buttonContinue.addEventListener("click", function() {
     if (counter === 0) {
         fight();
+        counter++
     }   
     else if (counter === 1) {
         fight_result();
+        counter++    
     }
 });
 
