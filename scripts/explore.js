@@ -10,7 +10,7 @@ let addHealth = document.createElement("p");
 // Initializing a counter as 0
 let counter = 0;
 
-// Getting the button from the HTML
+// Getting the button CONTINUE from the HTML
 const buttonContinue = document.getElementById("button__continue");
 
 buttonContinue.addEventListener("click", function() {
