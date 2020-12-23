@@ -15,17 +15,25 @@ const buttonContinue = document.getElementById("button__continue");
 
 buttonContinue.addEventListener("click", function() {
 
+    // Checks the HP of the player
+    if (stats.health <= 1 ) {
+        addHurt.textContent = "Your HP is too low! You need to run and sleep at the tavern!";
+        addText(addHurt);
+        buttonContinue.style.display = 'none';
+        return
+    };
+
     // This happens on the first time user clicks the button
     if (counter === 0) {
         fight();
         counter++
-    }   
+    }
 
     // This happens on the second time user clicks the button
     else if (counter === 1) {
         fight_result();
         counter++
-    }
+    };
 });
 
 function fight() {
@@ -40,9 +48,9 @@ function fight() {
 function addText(text) {
     boxText.appendChild(document.createElement("br"));
     boxText.appendChild(text);
-}
+};
 
 function fightResult(){
 
 
-}
+};
