@@ -1,4 +1,4 @@
-let stats = JSON.parse(localStorage.getItem("stats"));
+stats = JSON.parse(localStorage.getItem("stats"));
 
 // Getting the button TAVERN from the HTML
 const buttonTavern = document.getElementById("button__tavern");

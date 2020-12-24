@@ -1,5 +1,5 @@
 // Importing stats from main_stats.js
-let stats = JSON.parse(localStorage.getItem("stats"));
+stats = JSON.parse(localStorage.getItem("stats"));
 
 // Getting the box__text where we display all the text
 let boxText = document.getElementById("box__text");
