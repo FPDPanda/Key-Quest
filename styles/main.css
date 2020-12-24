@@ -36,8 +36,34 @@ a {
 
     display: grid;
     grid-template-areas: "explore tavern"
-                          "armory knight";
+                          "armory player-area";
 }
+
+#button__explore {grid-area: explore}
+#button__tavern {grid-area: tavern}
+#button__armory {grid-area: armory}
+#player-area {
+    grid-area: player-area;
+
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+    grid-template-areas: "player-stats"
+                         "player";
+}
+
+#player-stats {
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+
+    width: 40%;
+    height: 60%;
+    background-color: white;
+
+    border-radius: 200px;
+}
+
 
 /* Button styles */
 .button {
