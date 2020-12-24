@@ -35,6 +35,8 @@ a {
     background-size: cover;
 
     display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     grid-template-areas: "explore tavern"
                           "armory player-area";
 }
@@ -46,7 +48,7 @@ a {
     grid-area: player-area;
 
     display: grid;
-    grid-template-rows: 1fr 3fr;
+    grid-template-rows: 1fr 2fr;
     grid-template-areas: "player-stats"
                          "player";
 }
@@ -57,13 +59,24 @@ a {
     justify-content: center;
     align-items: center;
 
-    width: 40%;
-    height: 60%;
+    padding: 1rem;
+
+    max-width: 40%;
+    max-height: 60%;
     background-color: white;
 
-    border-radius: 200px;
+    border-radius: 20px;
 }
 
+#player-stats img {
+    height: clamp(5vh, 10vh, 15vh);
+}
+
+#player-stats text {
+    font-size: 3rem;
+
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 
 /* Button styles */
 .button {
