@@ -15,7 +15,7 @@ buttonContinue.addEventListener("click", function() {
 
     // Checks the HP of the player
     if (stats.health <= 1 ) {
-        boxText.innerHTML += "<br><p class ='red'> Your HP is too low! You need to run and sleep at the tavern!</p>";
+        boxText.innerHTML += "<br><p class ='red'> You're hurt pretty bad! You need to run away from the monster!</p>";
         buttonContinue.style.display = 'none';
         return
     } else {
@@ -24,6 +24,7 @@ buttonContinue.addEventListener("click", function() {
 });
 
 function fight( ) {
+    document.getElementById("text").textContent = "Continue"
     if (counter === 0) {
         monsterAttack();
         counter++
