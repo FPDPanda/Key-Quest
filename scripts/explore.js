@@ -15,8 +15,7 @@ buttonContinue.addEventListener("click", function() {
 
     // Checks the HP of the player
     if (stats.health <= 1 ) {
-        addHurt.textContent = "Your HP is too low! You need to run and sleep at the tavern!";
-        addText(addHurt);
+        boxText.innerHTML += "<br><p class ='red'> Your HP is too low! You need to run and sleep at the tavern!</p>";
         buttonContinue.style.display = 'none';
         return
     } else {
@@ -43,5 +42,9 @@ function monsterAttack() {
 }
 
 function playerAttack() {
-
+    boxText.innerHTML += "<br><p> You swing your <span class='grey'>" + stats.weapons[stats.weapons.length-1] + "</span> and beat the monster!";
+    document.getElementById("text").textContent = "Victory!"
+    buttonContinue.addEventListener("click", function() {
+        window.location.replace("../index.html");
+    });
 }
