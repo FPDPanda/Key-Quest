@@ -1,31 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="./styles/main.css">
-    <link rel="stylesheet" href="./animations/hover.css">
-    <link rel="stylesheet" href="./animations/body.css">
+    <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="stylesheet" href="./animations/hover.css" />
+    <link rel="stylesheet" href="./animations/body.css" />
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Texturina:wght@600;800&display=swap" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Texturina:wght@600;800&display=swap"
+      rel="stylesheet"
+    />
 
     <title>Key Quest</title>
-    <link rel="icon" href="./images/icons/key.png">
-</head>
-<body>
-    <main>  
-        <div class="game">
-            <a href="./pages/explore.html"><button class="button" id="button__explore"><img src="./images/icons/explore.png" alt="swords"><text>Explore</text></button></a>
-            <a><button class="button" id="button__tavern"><img src="./images/icons/tavern.png" alt="swords"><text>Tavern</text></button></a>
-            <a><button class="button" id="button__armory"><img src="./images/icons/armory.png" alt="swords"><text>Armory</text></button></a>
-        <div id="knight"></div>
+    <link rel="icon" href="./images/icons/key.png" />
+  </head>
+  <body>
+    <main>
+      <div class="game">
+        <a href="./pages/explore.html" id="button__explore">
+          <button class="button">
+            <img src="./images/icons/explore.png" alt="swords" />
+            <text>Explore</text>
+          </button>
+        </a>
+
+        <a id="button__tavern">
+          <button class="button">
+            <img src="./images/icons/tavern.png" alt="swords" />
+            <text>Tavern</text>
+          </button>
+        </a>
+
+        <a id="button__armory">
+          <button class="button">
+            <img src="./images/icons/armory.png" alt="swords" />
+            <text>Armory</text>
+          </button>
+        </a>
+
+        <div id="player-area">
+          <div id="player-stats"></div>
+          <div id="player"></div>
         </div>
-        </div>
+      </div>
     </main>
 
     <script src="./scripts/main_stats.js"></script>
     <script src="./scripts/tavern.js"></script>
-</body>
+  </body>
 </html>
