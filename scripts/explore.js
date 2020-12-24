@@ -1,17 +1,15 @@
 // Importing stats from main_stats.js
 let stats = JSON.parse(localStorage.getItem("stats"));
 
-// Creating the variables used in the functions fight() and addText()
+// Getting the box__text where we display all the text
 let boxText = document.getElementById("box__text");
-let addHurt = document.createElement("p");
-addHurt.classList.add('red');
-let addHealth = document.createElement("p");
+
+// Getting the button CONTINUE from the HTML
+const buttonContinue = document.getElementById("button__continue");
 
 // Initializing a counter as 0
 let counter = 0;
 
-// Getting the button CONTINUE from the HTML
-const buttonContinue = document.getElementById("button__continue");
 
 buttonContinue.addEventListener("click", function() {
 
@@ -21,36 +19,29 @@ buttonContinue.addEventListener("click", function() {
         addText(addHurt);
         buttonContinue.style.display = 'none';
         return
-    };
-
-    // This happens on the first time user clicks the button
-    if (counter === 0) {
+    } else {
         fight();
-        counter++
     }
-
-    // This happens on the second time user clicks the button
-    else if (counter === 1) {
-        fight_result();
-        counter++
-    };
 });
 
-function fight() {
-    stats.health--;
-    addHurt.textContent = "You were hurt!";
-    addText(addHurt);
-    addHealth.textContent = "Your health is now " + stats.health;
-    addText(addHealth);
+function fight( ) {
+    if (counter === 0) {
+        monsterAttack();
+        counter++
+    } else if (counter === 1) {
+        playerAttack();
+        counter++
+    }
     localStorage.setItem("stats", JSON.stringify(stats));
 };
 
-function addText(text) {
-    boxText.appendChild(document.createElement("br"));
-    boxText.appendChild(text);
-};
+function monsterAttack() {
+    boxText.innerHTML += "<br><p>The small monster swiftly attacks and you get hit!</p>";
+    stats.health--;
+    boxText.innerHTML += "<br><p class='red'> You were hurt!";
+    boxText.innerHTML += "<br><p>Your health is now " + stats.health;
+}
 
-function fightResult(){
+function playerAttack() {
 
-
-};
+}
