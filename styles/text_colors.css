@@ -1,7 +1,11 @@
 .green {
-    color: green;
+    color: #080;
 }
 
 .red {
-    color: red;
+    color: #f00;
+}
+
+.grey {
+    color: #808080;
 }
