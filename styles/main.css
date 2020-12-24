@@ -63,7 +63,7 @@ a {
 
     padding: 1rem;
 
-    max-width: 40%;
+    max-width: 100%;;
     max-height: 60%;
     background-color: white;
 
@@ -71,13 +71,14 @@ a {
 }
 
 #player__stats img {
-    grid-area: player__image;
+    margin-left: 1vw;
 
-    height: clamp(5vh, 10vh, 15vh);
+    height: clamp(5vh, 6vh, 10vh);
 }
 
 #player__stats text {
     font-size: 3rem;
+    margin-left: 1vw;
 
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
