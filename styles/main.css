@@ -82,6 +82,10 @@ a {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+#player__stats text:last-child {
+    margin-right: 1rem;
+}
+
 /* Button styles */
 .button {
     padding: 1rem;

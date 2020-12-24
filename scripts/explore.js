@@ -23,7 +23,7 @@ buttonContinue.addEventListener("click", function() {
     }
 });
 
-function fight( ) {
+function fight() {
     document.getElementById("text").textContent = "Continue"
     if (counter === 0) {
         monsterAttack();
