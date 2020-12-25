@@ -24,7 +24,11 @@ buttonContinue.addEventListener("click", function() {
 });
 
 function fight() {
+
+    // Changes button from "FIGHT" to "CONTINUE"
     document.getElementById("text").textContent = "Continue"
+
+    // Button sequence: will do first then second
     if (counter === 0) {
         monsterAttack();
         counter++
@@ -44,7 +48,11 @@ function monsterAttack() {
 
 function playerAttack() {
     boxText.innerHTML += "<br><p> You swing your <span class='grey'>" + stats.weapons[stats.weapons.length-1] + "</span> and beat the monster!";
+
+    // Changes button from "CONTINUE" to "VICTORY!"
     document.getElementById("text").textContent = "Victory!"
+
+    // Button now sends you back to the main page
     buttonContinue.addEventListener("click", function() {
         window.location.replace("../index.html");
     });

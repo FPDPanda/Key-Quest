@@ -1,4 +1,5 @@
 // Importing stats from main_stats.js
+/* *** DO LET STATS WHEN YOU CREATE A SEPARATE PAGE FOR THE TAVERN */
 stats = JSON.parse(localStorage.getItem("stats"));
 
 // Getting the button TAVERN from the HTML
@@ -10,6 +11,6 @@ buttonTavern.addEventListener("click", function() {
     alert("You restored your HP to MAX!");
     
     displayedHealth.classList.remove('red');
-    // ERASE THIS WHEN YOU CREATE A SEPARATE PAGE FOR THE TAVERN
+    /* *** ERASE THIS WHEN YOU CREATE A SEPARATE PAGE FOR THE TAVERN *** */
     displayedHealth.textContent = stats.health;
 });

@@ -6,7 +6,7 @@ window.addEventListener("load", setStats({
     weapons: ['Dagger']
 }));
 
-// This is the function that will set all the stats once.
+// This is the function that will set all the stats (ONLY ONCE)
 function setStats(stats) {
     localStorage.getItem("stats")? 0 : localStorage.setItem("stats", JSON.stringify(stats));
 };
