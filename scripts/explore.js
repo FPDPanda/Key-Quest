@@ -42,8 +42,8 @@ function fight() {
 function monsterAttack() {
     boxText.innerHTML += "<br><p>The small monster swiftly attacks and you get hit!</p>";
     stats.health--;
-    boxText.innerHTML += "<br><p class='red'> You were hurt!";
-    boxText.innerHTML += "<br><p>Your health is now " + stats.health;
+    boxText.innerHTML += "<br><p class='red'> You were hurt!!</p>";
+    boxText.innerHTML += "<br><p>Your health is now " + stats.health + "</p>";
 }
 
 function playerAttack() {
