@@ -56,14 +56,15 @@ a {
 #player__stats {
     grid-area: player__stats;
 
-    display: flex;
-    justify-self: center;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr 3fr;
+    grid-template-areas: "healthImg health weaponImg weapon";
     align-items: center;
+    align-self: center;
 
     padding: 1rem;
 
-    max-width: 100%;;
+    max-width: 100%;
     max-height: 60%;
     background-color: white;
 
@@ -77,7 +78,7 @@ a {
 }
 
 #player__stats text {
-    font-size: 3rem;
+    font-size: clamp(0.5rem, 2rem, 3rem);
     margin-left: 1vw;
 
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -86,6 +87,11 @@ a {
 #player__stats text:last-child {
     margin-right: 1rem;
 }
+
+#player__stats__health__image {grid-area: healthImg;}
+#player__stats__health {grid-area: health;}
+#player__stats__weapon__image {grid-area: weaponImg;}
+#player__stats__weapon {grid-area: weapon;}
 
 /* Button styles */
 .button {
@@ -123,6 +129,7 @@ a {
 
 /* Media queries */
 @media (max-width: 900px) {
+    /* Whole screen */
     .game {
         width: 100vw;
         height: 100vh;
@@ -130,6 +137,7 @@ a {
         overflow: hidden;
     }
 
+    /* Buttons */
     a {
         min-width: 150px;
     }
@@ -150,8 +158,16 @@ a {
         margin-top: 1vh;
     }
 
+    /* Armory Button */
     #armory {
         margin-top: 0;
+    }
+
+    /* Stats Area */
+    #player__stats {
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas: "healthImg health"
+                             "weaponImg weapon";
     }
 }
 
