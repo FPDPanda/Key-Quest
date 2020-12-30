@@ -35,6 +35,7 @@ function fight() {
     } else if (counter === 1) {
         playerAttack();
         counter++
+        lootDrop();
     }
     localStorage.setItem("stats", JSON.stringify(stats));
 };
@@ -56,4 +57,18 @@ function playerAttack() {
     buttonContinue.addEventListener("click", function() {
         window.location.replace("../index.html");
     });
+}
+
+function lootDrop() {
+    let droppedCoins = 3;
+
+    if (droppedCoins > 0) {
+        boxText.innerHTML += "<br><p>The monster dropped loot!</p>"
+    }
+
+    if (droppedCoins === 1) {
+        boxText.innerHTML += "<br><p>You pick up <span class='gold' style='font-size:20px'>" + droppedCoins + "</span> coin!</p>"
+    } else if (droppedCoins > 1) {
+        boxText.innerHTML += "<br><p>You pick up <span class='gold' style='font-size:20px'>" + droppedCoins + "</span> coins!</p>"
+    }
 }
