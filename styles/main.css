@@ -16,18 +16,6 @@ main {
     align-items: center;
 }
 
-a {
-    text-decoration: none;
-    border-radius: 2rem;
-    
-    width: clamp(25vw, 30vw, 35vw);
-    height: 30vh;
-
-    display: flex;
-    justify-self: center;
-    align-self: center;
-}
-
 .game {
     width: 100%;
     height: 100%;
@@ -102,6 +90,18 @@ a {
 #stats__weapon {grid-area: weapon;}
 
 /* Button styles */
+a {
+    text-decoration: none;
+    border-radius: 2rem;
+    
+    width: clamp(150px, 30vw, 35vw);
+    height: 30vh;
+
+    display: flex;
+    justify-self: center;
+    align-self: center;
+}
+
 .button {
     padding: 1rem;
     border: 4px solid #888;
@@ -135,21 +135,11 @@ a {
 }
 
 
-/* Media queries */
-@media (max-width: 900px) {
-    /* Whole screen */
-    .game {
-        width: 100vw;
-        height: 100vh;
+/* MEDIA QUERIES */
 
-        overflow: hidden;
-    }
-
+/* Medium-sized Screen */
+@media (max-width: 1000px) {
     /* Buttons */
-    a {
-        min-width: 150px;
-    }
-
     .button {
         flex-direction: column;
 
@@ -165,23 +155,46 @@ a {
         font-size: 2rem;
         margin-top: 1vh;
     }
-
-    /* Armory Button */
-    #armory {
-        margin-top: 0;
-    }
-
-    /* Stats Area */
-    #player__stats {
-        grid-template-columns: 1fr 2fr;
-        grid-template-areas: "healthImg health"
-                             "coinsImg coins" 
-                             "weaponImg weapon";
-    }
 }
 
 @media (max-height: 500px) {
     .button img {
         display: none;
+    }
+}
+
+/* Small-sized Screen */
+@media (max-width: 700px) {
+    .game {
+        padding: 4vh 1vh 0 1vh;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 9vh 9vh 9vh 65vh;
+        row-gap: 1vh;
+        grid-template-areas: "explore explore"
+                             "tavern tavern"
+                             "armory armory"
+                             "stats player";
+
+        overflow: hidden;
+    }
+
+    a {
+        height: 100%;
+        width: 100%;
+    }
+
+    .button {
+        flex-direction: initial;
+    }
+    
+    .button img {
+        height: 6vh;
+        margin-right: 6vw;
+    
+        transition-duration: 0.2s;
+    }
+    
+    .button text {
+        font-size: 2.2rem
     }
 }
