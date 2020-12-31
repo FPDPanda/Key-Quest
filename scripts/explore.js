@@ -60,7 +60,8 @@ function playerAttack() {
 }
 
 function lootDrop() {
-    let droppedCoins = 3;
+    // random number from 0 to 2
+    let droppedCoins = Math.floor(Math.random() * 3);
 
     if (droppedCoins > 0) {
         boxText.innerHTML += "<br><p>The monster dropped loot!</p>"
@@ -71,4 +72,6 @@ function lootDrop() {
     } else if (droppedCoins > 1) {
         boxText.innerHTML += "<br><p>You pick up <span class='gold' style='font-size:20px'>" + droppedCoins + "</span> coins!</p>"
     }
+
+    stats.coins += droppedCoins;
 }
