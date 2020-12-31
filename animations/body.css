@@ -1,4 +1,4 @@
-#player__image {
+#player {
     background-image: url("../images/character/knight.gif");
     background-size: 30vh;
     background-repeat: no-repeat;
@@ -6,7 +6,7 @@
 }
 
 @media (max-width: 900px) {
-    #player__image {
+    #player {
         background-position: right bottom 1.5vh;
     }
 }

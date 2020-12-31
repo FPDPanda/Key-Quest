@@ -2,9 +2,9 @@
 let stats = JSON.parse(localStorage.getItem("stats"));
 
 // Getting the stats locations from the stats bar
-let displayedHealth = document.getElementById("player__stats__health");
-let displayedWeapon = document.getElementById("player__stats__weapon");
-let displayedCoins = document.getElementById("player__stats__coins");
+let displayedHealth = document.getElementById("stats__health");
+let displayedWeapon = document.getElementById("stats__weapon");
+let displayedCoins = document.getElementById("stats__coins");
 
 window.addEventListener("load", function() {
     if (stats.health < stats.maxHealth) {

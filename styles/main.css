@@ -35,65 +35,71 @@ a {
     background-size: cover;
 
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    grid-template-areas: "explore tavern"
-                          "armory player";
+    grid-template-areas: "explore tavern armory"
+                          "stats stats player";
 }
 
 #button__explore {grid-area: explore}
 #button__tavern {grid-area: tavern}
 #button__armory {grid-area: armory}
-#player {
-    grid-area: player;
+#player {grid-area: player;}
+
+#stats {
+    grid-area: stats;
+    justify-self: center;
+    margin-left: 4vw;
 
     display: grid;
-    grid-template-rows: 1fr 2fr;
-    grid-template-areas: "player__stats"
-                         "player__image";
-}
-
-#player__stats {
-    grid-area: player__stats;
-
-    display: grid;
-    grid-template-columns: repeat(3,1fr 2fr);
-    grid-template-areas: "healthImg health coinsImg coins weaponImg weapon";
+    grid-template-columns: repeat(3,1fr 8fr);
+    grid-template-areas: "statsTitle statsTitle"
+                         "healthImg  health" 
+                         "coinsImg   coins"
+                         "weaponImg  weapon";
     align-items: center;
     align-self: center;
 
     padding: 1rem;
+    margin-left: 4vw;
 
-    max-width: 100%;
-    max-height: 60%;
+    min-width: 165px;
+    max-width: 50%;
+    max-height: 80%;
     background-color: white;
 
     border-radius: 20px;
 }
 
-#player__stats img {
+#stats img {
     margin-left: 1vw;
 
     height: clamp(5vh, 6vh, 10vh);
 }
 
-#player__stats text {
+#stats text {
     font-size: clamp(0.5rem, 2rem, 3rem);
     margin-left: 1vw;
 
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-#player__stats text:last-child {
-    margin-right: 1rem;
+#stats__title {
+    grid-area: statsTitle;
+    text-align: center;
 }
 
-#player__stats__health__image {grid-area: healthImg;}
-#player__stats__health {grid-area: health;}
-#player__stats__coins__image {grid-area: coinsImg;}
-#player__stats__coins {grid-area: coins;}
-#player__stats__weapon__image {grid-area: weaponImg;}
-#player__stats__weapon {grid-area: weapon;}
+#stats__title h2 {
+    font-size: 2rem;
+    margin-bottom: 1vh;
+}
+
+#stats__health__image {grid-area: healthImg;}
+#stats__health {grid-area: health;}
+#stats__coins__image {grid-area: coinsImg;}
+#stats__coins {grid-area: coins;}
+#stats__weapon__image {grid-area: weaponImg;}
+#stats__weapon {grid-area: weapon;}
 
 /* Button styles */
 .button {
