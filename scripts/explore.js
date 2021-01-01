@@ -44,7 +44,7 @@ function monsterAttack() {
     boxText.innerHTML += "<br><p>The small monster swiftly attacks and you get hit!</p>";
     stats.health--;
     boxText.innerHTML += "<br><p class='red'> You were hurt!!</p>";
-    boxText.innerHTML += "<br><p>Your health is now " + stats.health + "</p>";
+    boxText.innerHTML += "<br><p>Your health is now <span class='red'>" + stats.health + "</span></p>";
 }
 
 function playerAttack() {
@@ -60,18 +60,22 @@ function playerAttack() {
 }
 
 function lootDrop() {
-    // random number from 0 to 2
-    let droppedCoins = Math.floor(Math.random() * 3);
+    // Random number between 1 and 10
+    let droppedLoot = Math.floor(Math.random()*10+1)
 
-    if (droppedCoins > 0) {
-        boxText.innerHTML += "<br><p>The monster dropped loot!</p>"
-    }
+    // Coin drops (50% chance)
+    if (droppedLoot > 4) {        
+        boxText.innerHTML += "<br><p>The monster was holding some <span class='gold' style='font-size:20px'>coins!</span></p>"
+        // random number of coins from 1 to 3
+        let droppedCoins = Math.floor(Math.random() * 3 + 1);
+    
 
-    if (droppedCoins === 1) {
-        boxText.innerHTML += "<br><p>You pick up <span class='gold' style='font-size:20px'>" + droppedCoins + "</span> coin!</p>"
-    } else if (droppedCoins > 1) {
-        boxText.innerHTML += "<br><p>You pick up <span class='gold' style='font-size:20px'>" + droppedCoins + "</span> coins!</p>"
-    }
+        if (droppedCoins === 1) {
+            boxText.innerHTML += "<br><p>You pick up <span class='gold' style='font-size:20px'>" + droppedCoins + "</span> coin!</p>"
+        } else if (droppedCoins > 1) {
+            boxText.innerHTML += "<br><p>You pick up <span class='gold' style='font-size:20px'>" + droppedCoins + "</span> coins!</p>"
+        }
 
     stats.coins += droppedCoins;
+    }
 }
