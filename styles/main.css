@@ -5,6 +5,7 @@
 
     font-size: 16px;
     font-family: 'Texturina', sans-serif;
+    box-sizing: border-box;
 }
 
 main {
@@ -52,7 +53,7 @@ main {
     margin-left: 4vw;
 
     min-width: 165px;
-    max-width: 50%;
+    width: clamp(110px, 60vw, 50%);
     max-height: 80%;
     background-color: white;
 
@@ -196,5 +197,9 @@ a {
     
     .button text {
         font-size: 2.2rem
+    }
+
+    #stats {
+        width: 100%;
     }
 }
