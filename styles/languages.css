@@ -36,3 +36,16 @@
     color: rgb(253, 253, 253);
 }
 
+@media (max-width: 750px) {
+    #languages {
+        flex-direction: column;
+        top:0;
+        left:0;
+        width: 100%;
+        height: 100%;
+    }
+    #languages img {
+        width: 200px;
+        height: auto;
+    }
+} 
