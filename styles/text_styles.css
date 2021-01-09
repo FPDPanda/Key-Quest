@@ -1,0 +1,31 @@
+.green {
+    color: #080;
+}
+
+.dark-green {
+    color: #007430;
+}
+
+.white {
+    color: #fff;
+}
+
+.red {
+    color: #f00;
+}
+
+.grey {
+    color: #808080;
+}
+
+.gold {
+    color: gold;
+}
+
+.big {
+    font-size: 1.2rem;
+}
+
+.black-bg {
+    background-color: #000;
+}
