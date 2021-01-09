@@ -1,6 +1,39 @@
 // Importing stats from main_stats.js
 let stats = JSON.parse(localStorage.getItem("stats"));
 
+let monsterArea = document.getElementById("monster");
+
+let encounterChance = 0;
+let monster = "player encountered this monster"
+let monsters = {
+    goblin: "url(../images/monsters/goblin__idle.gif)",
+    goblinSize: "20vh",
+    ogre: "url(../images/monsters/ogre__idle.gif)",
+    ogreSize: "25vh",
+    orc: "url(../images/monsters/orc__idle.gif)",
+    orcSize: "28vh",
+};
+
+window.addEventListener("load", function() {
+    encounterChance = Math.floor(Math.random()*100+1);
+
+    if (encounterChance <= 70) {
+        monster = 'goblin';
+        monsterArea.style.backgroundImage = monsters.goblin;
+        monsterArea.style.backgroundSize = monsters.goblinSize;
+
+    } else if (encounterChance > 70 && encounterChance <= 90) {
+        monster = 'ogre';
+        monsterArea.style.backgroundImage = monsters.ogre;
+        monsterArea.style.backgroundSize = monsters.ogreSize;
+
+    } else if (encounterChance > 90) {
+        monster = 'orc';
+        monsterArea.style.backgroundImage = monsters.orc;
+        monsterArea.style.backgroundSize = monsters.orcSize;
+    }
+});
+
 // Getting the box__text where we display all the text
 let boxText = document.getElementById("box__text");
 

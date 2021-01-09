@@ -37,6 +37,7 @@ a {
     background-repeat: repeat-x;
 
     display: grid;
+    grid-template-rows: 20vh 80vh;
     grid-template-areas: "box escape"
                          "box monster";
 }
