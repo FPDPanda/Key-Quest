@@ -1,3 +1,4 @@
+// -------------- STATUS AREA -------------- //
 // Importing stats from main_stats.js
 let stats = JSON.parse(localStorage.getItem("stats"));
 
@@ -6,6 +7,7 @@ let displayedHealth = document.getElementById("stats__health");
 let displayedWeapon = document.getElementById("stats__weapon");
 let displayedCoins = document.getElementById("stats__coins");
 
+// Updating the stats
 window.addEventListener("load", function() {
     if (stats.health < stats.maxHealth) {
         displayedHealth.classList.add('red');
@@ -18,3 +20,4 @@ window.addEventListener("load", function() {
     displayedCoins.textContent = stats.coins;
     displayedWeapon.textContent = stats.weapons[stats.weapons.length -1];
 });
+// -------------- END OF STATUS AREA -------------- //
