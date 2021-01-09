@@ -20,8 +20,13 @@ buttonContinue.addEventListener("click", function() {
         return
     } else {
         fight();
+        document.getElementById("text").textContent = "Fight!"
     }
 });
+
+buttonContinue.addEventListener("click", function(){    
+    fight();
+})
 
 function fight() {
 
