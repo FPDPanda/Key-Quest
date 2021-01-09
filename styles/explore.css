@@ -108,6 +108,10 @@ a {
     justify-content: space-around;
 }
 
+#monster {
+    justify-self: right;
+    width: 30vw;
+}
 
 /* Media queries */
 @media (max-width: 900px) {
@@ -115,8 +119,10 @@ a {
         width: 100vw;
         height: 100vh;
         overflow: hidden;
-        grid-template-rows: 1fr 20vh 1fr;
-        grid-template-areas:'box box''escape escape''monster monster';
+        grid-template-rows: 1fr 20vh 1.1fr;
+        grid-template-areas: 'box box'
+                             'escape escape'
+                             'monster monster';
     }
 
     .box {
@@ -141,6 +147,7 @@ a {
 
     #monster {
         grid-area: monster;
+        width: 100%;
     }
     
     #escapeContainer__button img {
