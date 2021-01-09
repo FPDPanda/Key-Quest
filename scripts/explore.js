@@ -1,14 +1,66 @@
-// Importing stats from main_stats.js
+/* AREA GUIDE :
+
+1. IMPORT AREA
+    - Importing stats
+    - Importing language
+
+2. GLOBAL FUNCTIONS
+    - Scroll functions
+
+1. MONSTER AREA - THE MONSTER IS GENERATED
+    - Encounter rates
+        Goblin 70%
+        Ogre 20%
+        Orc 10%
+
+3. TEXT AREA - NARRATING TO THE PLAYER
+    - Event 1 LOW HP - If HP is 1, player has to run
+    - Event 2 FIGHT - If HP is higher than 1, player can battle
+
+4. BATTLE AREA - THE PLAYER FIGHTS THE MONSTER
+    - Event 3 VICTORY - If battle ends and player has more than 0 hp, he can get loot
+    - Event 4 DEFEAT - If HP hits 0 (or lower) player loses half his coins
+
+    - Damage rates
+        Goblin hits for 1 hp
+        Ogre hits for 1-2 hp
+        Orc hits for 2-3 hp
+
+5. LOOT AREA
+    - Loot rates
+        Goblin:
+        Ogre:
+        Orc:
+
+6. STATUS UPDATE AREA
+*/
+
+// -------------- 1. IMPORT AREA -------------- //
+// Importing main stats from localStorage
 let stats = JSON.parse(localStorage.getItem("stats"));
 
+// Importing language from localStorage
+mainLanguage = JSON.parse(localStorage.getItem("language"));
+// -------------- END OF IMPORT AREA -------------- //
+
+// -------------- 2. GLOBAL FUNCTIONS -------------- //
+// Scroll Function - A basic function to scroll down and show all the text
 function scroll() {    
     boxText.scrollTop = boxText.scrollHeight
 }
+// -------------- END OF GLOBAL FUNCTIONS -------------- //
 
+// -------------- 3. MONSTER AREA -------------- //
+// Getting the monster area
 let monsterArea = document.getElementById("monster");
 
+// Randomizing the encounter and checking it with this
 let encounterChance = 0;
+
+// The monster the player encountered will be saved here
 let monster = "player encountered this monster"
+
+// The monster and its respective size
 let monsters = {
     goblin: "url(../images/monsters/goblin__idle.gif)",
     goblinSize: "20vh",
@@ -19,37 +71,45 @@ let monsters = {
 };
 
 window.addEventListener("load", function() {
+    // Generates a random number between 1 and 100
     encounterChance = Math.floor(Math.random()*100+1);
 
+    // 70% chance
     if (encounterChance <= 70) {
         monster = 'goblin';
         monsterArea.style.backgroundImage = monsters.goblin;
         monsterArea.style.backgroundSize = monsters.goblinSize;
 
+    // 20% chance
     } else if (encounterChance > 70 && encounterChance <= 90) {
         monster = 'ogre';
         monsterArea.style.backgroundImage = monsters.ogre;
         monsterArea.style.backgroundSize = monsters.ogreSize;
 
+    // 10% chance
     } else if (encounterChance > 90) {
         monster = 'orc';
         monsterArea.style.backgroundImage = monsters.orc;
         monsterArea.style.backgroundSize = monsters.orcSize;
     }
 });
+// -------------- END OF MONSTER AREA -------------- //
 
+// -------------- 4. TEXT AREA -------------- //
 // Getting the box__text where we display all the text
 let boxText = document.getElementById("box__text");
 
+// Getting the box__encounterText where we display the text for the encounter
 let encounterText = document.getElementById("box__encounterText");
 
 // Getting the button CONTINUE from the HTML
 const buttonContinue = document.getElementById("button__continue");
 
-// Initializing a counter as 0
+// This counter will be used to control the button
 let counter = 0;
 
 window.addEventListener("load", function() {
+    // Changes the text according to the monster
     if (monster === "goblin") {
         encounterText.innerHTML += "<p>You see a small green monster, it is a <span class='green'>Goblin!</span><p>"
         encounterText.innerHTML += "</br>"
@@ -69,7 +129,7 @@ window.addEventListener("load", function() {
         encounterText.innerHTML += "</br>"
     }
 
-    // Checks the HP of the player
+    // Checks the HP of the player and flees (Event 1) or fights (Event 2)
     if (stats.health <= 1 ) {
         boxText.innerHTML += "<p class ='red'> You're hurt pretty bad! You need to run away from the monster!</p>";
         boxText.innerHTML += "<br>";
@@ -81,10 +141,12 @@ window.addEventListener("load", function() {
     }
 });
 
+// If the player has enough HP he can choose to fight (Event 2)
 buttonContinue.addEventListener("click", function(){    
     fight();
 })
 
+// - Event 2 FIGHT - If HP is higher than 1, player can battle
 function fight() {
 
     // Changes button from "FIGHT" to "CONTINUE"
@@ -92,17 +154,20 @@ function fight() {
 
     // Button sequence: will do first then second
     if (counter === 0) {
+        // The monster attacks first
         monsterAttack();        
         scroll()
         counter++
     } else {
+        // The player attacks
         playerAttack();        
         scroll()
         counter++
+
+        // After the battle the monster has a chance to drop loot (Event 3)
         lootDrop();        
         scroll()
     }
-    localStorage.setItem("stats", JSON.stringify(stats));
 };
 
 function monsterAttack() {
@@ -125,7 +190,12 @@ function playerAttack() {
         window.location.replace("../index.html");
     });
 }
+// -------------- END OF TEXT AREA -------------- //
 
+// -------------- 5. LOOT AREA -------------- //
+// Event 3 VICTORY - If battle ends and player has more than 0 hp, he can get loot
+
+//Function to randomly drop loot
 function lootDrop() {
     // Random number between 1 and 10
     let droppedLoot = Math.floor(Math.random()*10+1)
@@ -149,3 +219,9 @@ function lootDrop() {
     stats.coins += droppedCoins;
     }
 }
+// -------------- END OF LOOT AREA -------------- //
+
+// -------------- 6. STATUS UPDATE -------------- //
+//Updates the status on the localStorage
+localStorage.setItem("stats", JSON.stringify(stats));
+// -------------- END OF STATUS UPDATE -------------- //
