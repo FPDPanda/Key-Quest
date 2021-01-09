@@ -10,8 +10,8 @@ const buttonContinue = document.getElementById("button__continue");
 // Initializing a counter as 0
 let counter = 0;
 
+window.addEventListener("load", function() {
 
-buttonContinue.addEventListener("click", function() {
 
     // Checks the HP of the player
     if (stats.health <= 1 ) {
@@ -19,7 +19,6 @@ buttonContinue.addEventListener("click", function() {
         buttonContinue.style.display = 'none';
         return
     } else {
-        fight();
         document.getElementById("text").textContent = "Fight!"
     }
 });
@@ -37,7 +36,7 @@ function fight() {
     if (counter === 0) {
         monsterAttack();
         counter++
-    } else if (counter === 1) {
+    } else {
         playerAttack();
         counter++
         lootDrop();
