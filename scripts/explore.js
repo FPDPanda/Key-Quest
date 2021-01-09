@@ -37,6 +37,8 @@ window.addEventListener("load", function() {
 // Getting the box__text where we display all the text
 let boxText = document.getElementById("box__text");
 
+let encounterText = document.getElementById("box__encounterText");
+
 // Getting the button CONTINUE from the HTML
 const buttonContinue = document.getElementById("button__continue");
 
@@ -44,11 +46,30 @@ const buttonContinue = document.getElementById("button__continue");
 let counter = 0;
 
 window.addEventListener("load", function() {
+    if (monster === "goblin") {
+        encounterText.innerHTML += "<p>You see a small green monster, it is a <span class='green'>Goblin!</span><p>"
+        encounterText.innerHTML += "</br>"
+        encounterText.innerHTML += "<p><span class='green'>Goblins</span> are weak monsters, you can take care of it.</p>"
+        encounterText.innerHTML += "</br>"
 
+    } else if (monster === "ogre") {
+        encounterText.innerHTML += "<p>You see a large green monster, it is an <span class='dark-green big'>Ogre!</span><p>"
+        encounterText.innerHTML += "</br>"
+        encounterText.innerHTML += "<p><span class='dark-green big'>Ogres</span> are ferocious monsters that can kill experienced adventurers, be very careful.</p>"
+        encounterText.innerHTML += "</br>"
+
+    } else {
+        encounterText.innerHTML += "<p>You see a towering monster boasting twice your size, it is an <span class='white black-bg big'>Orc!</span><p>"
+        encounterText.innerHTML += "</br>"
+        encounterText.innerHTML += "<p><span class='white black-bg big'>Orcs</span> are the bosses around these woods, there are few who rival them in power, run away as quick as you can.</p>"
+        encounterText.innerHTML += "</br>"
+    }
 
     // Checks the HP of the player
     if (stats.health <= 1 ) {
         boxText.innerHTML += "<br><p class ='red'> You're hurt pretty bad! You need to run away from the monster!</p>";
+        boxText.innerHTML += "<p class ='red'> You're hurt pretty bad! You need to run away from the monster!</p>";
+        boxText.innerHTML += "<br>";
         buttonContinue.style.display = 'none';
         return
     } else {
@@ -78,14 +99,16 @@ function fight() {
 };
 
 function monsterAttack() {
-    boxText.innerHTML += "<br><p>The small monster swiftly attacks and you get hit!</p>";
+    boxText.innerHTML += "<p>The monster attacks and you get hit!</p>";
     stats.health--;
     boxText.innerHTML += "<br><p class='red'> You were hurt!!</p>";
     boxText.innerHTML += "<br><p>Your health is now <span class='red'>" + stats.health + "</span></p>";
+    boxText.innerHTML += "<br>";
 }
 
 function playerAttack() {
-    boxText.innerHTML += "<br><p> You swing your <span class='grey'>" + stats.weapons[stats.weapons.length-1] + "</span> and beat the monster!";
+    boxText.innerHTML += "<p> You swing your <span class='grey'>" + stats.weapons[stats.weapons.length-1] + "</span> and beat the monster!</p>";
+    boxText.innerHTML += "<br>";
 
     // Changes button from "CONTINUE" to "VICTORY!"
     document.getElementById("text").textContent = "Victory!"
@@ -102,15 +125,18 @@ function lootDrop() {
 
     // Coin drops (50% chance)
     if (droppedLoot > 4) {        
-        boxText.innerHTML += "<br><p>The monster was holding some <span class='gold' style='font-size:20px'>coins!</span></p>"
+        boxText.innerHTML += "<p>The monster was holding some <span class='gold' style='font-size:20px'>coins!</span></p>"
+        boxText.innerHTML += "<br>"
         // random number of coins from 1 to 3
         let droppedCoins = Math.floor(Math.random() * 3 + 1);
     
 
         if (droppedCoins === 1) {
-            boxText.innerHTML += "<br><p>You pick up <span class='gold' style='font-size:20px'>" + droppedCoins + "</span> coin!</p>"
+            boxText.innerHTML += "<br><p>You pick up <span class='gold' style='font-size:20px'>" + droppedCoins + "</span> coin!</p>"        
+            boxText.innerHTML += "<br>"
         } else if (droppedCoins > 1) {
             boxText.innerHTML += "<br><p>You pick up <span class='gold' style='font-size:20px'>" + droppedCoins + "</span> coins!</p>"
+            boxText.innerHTML += "<br>"
         }
 
     stats.coins += droppedCoins;
