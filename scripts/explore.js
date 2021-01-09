@@ -1,6 +1,10 @@
 // Importing stats from main_stats.js
 let stats = JSON.parse(localStorage.getItem("stats"));
 
+function scroll() {    
+    boxText.scrollTop = boxText.scrollHeight
+}
+
 let monsterArea = document.getElementById("monster");
 
 let encounterChance = 0;
@@ -67,10 +71,10 @@ window.addEventListener("load", function() {
 
     // Checks the HP of the player
     if (stats.health <= 1 ) {
-        boxText.innerHTML += "<br><p class ='red'> You're hurt pretty bad! You need to run away from the monster!</p>";
         boxText.innerHTML += "<p class ='red'> You're hurt pretty bad! You need to run away from the monster!</p>";
         boxText.innerHTML += "<br>";
         buttonContinue.style.display = 'none';
+        scroll()
         return
     } else {
         document.getElementById("text").textContent = "Fight!"
@@ -88,12 +92,15 @@ function fight() {
 
     // Button sequence: will do first then second
     if (counter === 0) {
-        monsterAttack();
+        monsterAttack();        
+        scroll()
         counter++
     } else {
-        playerAttack();
+        playerAttack();        
+        scroll()
         counter++
-        lootDrop();
+        lootDrop();        
+        scroll()
     }
     localStorage.setItem("stats", JSON.stringify(stats));
 };
