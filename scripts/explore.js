@@ -168,6 +168,9 @@ function fight() {
         lootDrop();        
         scroll()
     }
+
+    // Updates the stats
+    updateStats(stats)
 };
 
 function monsterAttack() {
@@ -223,5 +226,7 @@ function lootDrop() {
 
 // -------------- 6. STATUS UPDATE -------------- //
 //Updates the status on the localStorage
-localStorage.setItem("stats", JSON.stringify(stats));
+function updateStats(stats) {
+    localStorage.setItem("stats", JSON.stringify(stats));
+}
 // -------------- END OF STATUS UPDATE -------------- //
