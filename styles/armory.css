@@ -162,3 +162,9 @@ main {
     flex-flow: row-reverse;
     justify-content: space-around;
 }
+
+@media (max-width: 500px) {
+    .weaponSpace {
+        grid-template-columns: 1fr 1fr;
+    }
+}
