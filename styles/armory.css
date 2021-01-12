@@ -76,10 +76,9 @@ main {
 
     height: 40%;
     width: clamp(135px, 30%, 30vh);
-    background: url("../images/bg/wooden-racks.png");
-    border: 1px solid #000;
-    border-top: 4px solid #000;
-    border-radius: 0 0 20px 20px;
+    background: url("../images/bg/wooden-racks.jpg");
+    border: 2px solid #fff;
+    border-radius: 20px;
     color: #ffff42;
 
     display: flex;
@@ -107,9 +106,6 @@ main {
 .price {
     width: clamp(50px, 25%, 5vw);
     height: clamp(19px, 10%, 3vh);
-    max-height: 25px;
-    border-radius: 7px;
-    background-color: #000;
     font-family: Georgia, 'Times New Roman', Times, serif;
     display: flex;
     align-items: center;
