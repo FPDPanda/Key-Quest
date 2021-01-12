@@ -21,3 +21,19 @@ window.addEventListener("load", function() {
     displayedWeapon.textContent = stats.weapons[stats.weapons.length -1];
 });
 // -------------- END OF STATUS AREA -------------- //
+
+// -------------- NEW PLAYER AREA ----------------- //
+// Getting the explore button
+let explore = document.getElementById("button__explore");
+
+// When the player clicks on the explore button
+explore.addEventListener("click", function() {
+    if (stats.weapons.length === 0) {
+        // If the weapons array (located on stats) is empty
+        window.location.replace("javascript:alert('You need a weapon! Visit the armory.')");
+    } else {
+        // If the player has a weapon
+        window.location.replace("./pages/explore.html")
+    }
+});
+// -------------- END OF NEW PLAYER AREA ----------------- //
