@@ -9,8 +9,8 @@
 }
 
 main {
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     
     display: flex;
     justify-content: center;
@@ -23,8 +23,10 @@ main {
     background-image: url("../images/bg/wooden-wall.jpg");
 
     display: grid;
-    grid-template-areas: "box box"
-                         ".   return";
+    grid-template-rows: 20vh 1fr 20vh;
+    grid-template-areas: "box"
+                         "wpns"
+                         "return";
 }
 
 /* Text Bubble styles*/
@@ -51,8 +53,65 @@ main {
     overflow-y: auto;
 }
 
+/* Weapons area */
+.weaponSpace {
+    grid-area: wpns;
+
+    width: 100%;
+    height: 100%;
+    padding-bottom: 2vh;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr
+}
+
+.weapon_rack {
+    justify-self: center;
+    align-self: center;
+
+    height: 40%;
+    width: clamp(100px, 20%, 30vh);
+    background-color: #816239;
+    border: 2px solid #000;
+    border-radius: 20px;
+    color: #ffff42;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.weapon_rack img {
+    max-height: 80%;
+}
+
+#dagger {
+    height: 40%;
+}
+
+#sword {
+    height: 80%;
+}
+
+#axe {
+    height: 60%;
+}
+
+.price {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.price img {
+    margin-left: 0.3vw;
+}
+
 /* Button styles */
-a {
+#returnContainer {
     text-decoration: none;
     
     min-width: 250px;
