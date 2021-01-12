@@ -29,7 +29,7 @@ main {
     background-image: url("../images/bg/wooden-wall.png");
 
     display: grid;
-    grid-template-rows: 20vh 65vh 15vh;
+    grid-template-rows: 18vh 70vh 10vh;
     grid-template-areas: "box"
                          "wpns"
                          "return";
@@ -39,7 +39,7 @@ main {
 .bubble {
     grid-area: box;
 
-    height: clamp(120px, 20%, 20vh);
+    height: clamp(150px, 30%, 20vh);
     width: 100%;
     background: rgb(204, 204, 204, 0.2);
     border-radius: 1.2rem;
@@ -52,7 +52,7 @@ main {
 
 #bubble__text {
     padding: 1.2rem;
-    height: clamp(40vh, 60vh, 70vh);
+    height: 100%;
     border-radius: 2rem;
     background-color: #fff;
 
@@ -135,7 +135,7 @@ main {
     padding: 1rem;
     border: 2px solid #888;
     color: #fff;
-    background-color: #ff4444;
+    background-color: #f44;
     height: 100%;
     width: 100%;
 
