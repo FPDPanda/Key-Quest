@@ -162,8 +162,14 @@ main {
 }
 
 @media (max-width: 500px) {
+    .game {
+        background-size: 300px;
+    }
     .weaponSpace {
         grid-template-columns: 50vw 50vw;
         grid-template-rows: 30vh 30vh;
+    }
+    #returnContainer {
+        width: 70%;
     }
 }
