@@ -105,6 +105,11 @@ main {
 }
 
 .price {
+    width: clamp(50px, 25%, 5vw);
+    height: clamp(19px, 10%, 3vh);
+    max-height: 25px;
+    border-radius: 7px;
+    background-color: #000;
     font-family: Georgia, 'Times New Roman', Times, serif;
     display: flex;
     align-items: center;
@@ -129,15 +134,16 @@ main {
 .button {
     padding: 1rem;
     border: 2px solid #888;
-    background-color: #fff;
+    color: #fff;
+    background-color: #ff4444;
     height: 100%;
     width: 100%;
 
     border-radius: 2rem;
 
-    align-items: center;
-    justify-content: center;
     display: flex;
+    align-items: center;
+    justify-content: space-around;
 
     transition-duration: 0.3s;
 
@@ -153,21 +159,6 @@ main {
 
 .button text {
     font-size: 2.2rem
-}
-
-#returnContainer {
-    width: clamp(30%, 35%, 45%);
-    justify-self: right;
-    margin-right: 2rem;
-
-    grid-area: return;
-}
-
-#returnContainer__button {
-    background-color: #ff4444;
-    color: #fff;
-    flex-flow: row-reverse;
-    justify-content: space-around;
 }
 
 @media (max-width: 500px) {
