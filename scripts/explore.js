@@ -152,21 +152,22 @@ function fight() {
     // Changes button from "FIGHT" to "CONTINUE"
     document.getElementById("text").textContent = "Continue"
 
-    // Button sequence: will do first then second
+    // All of these will only happen once, because of the counter
     if (counter === 0) {
         // The monster attacks first
         monsterAttack();        
         scroll()
         counter++
-    } else {
+    } else if (counter === 1){
         // The player attacks
         playerAttack();        
         scroll()
         counter++
-
+    } else if (counter === 2) {
         // After the battle the monster has a chance to drop loot (Event 3)
-        lootDrop();        
+        lootDrop();
         scroll()
+        counter++
     }
 
     // Updates the stats
@@ -187,11 +188,6 @@ function playerAttack() {
 
     // Changes button from "CONTINUE" to "VICTORY!"
     document.getElementById("text").textContent = "Victory!"
-
-    // Button now sends you back to the main page
-    buttonContinue.addEventListener("click", function() {
-        window.location.replace("../index.html");
-    });
 }
 // -------------- END OF TEXT AREA -------------- //
 
@@ -201,15 +197,21 @@ function playerAttack() {
 //Function to randomly drop loot
 function lootDrop() {
     // Random number between 1 and 10
-    let droppedLoot = Math.floor(Math.random()*10+1)
+    let droppedLoot = Math.floor(Math.random()*10+1);
+
+    if (droppedLoot <= 4) {
+        boxText.innerHTML += "<p>The monster had nothing.</p>"
+        boxText.innerHTML += "<br>"
+    };
 
     // Coin drops (50% chance)
-    if (droppedLoot > 4) {        
+    if (droppedLoot > 4) {
         boxText.innerHTML += "<p>The monster was holding some <span class='gold' style='font-size:20px'>coins!</span></p>"
         boxText.innerHTML += "<br>"
+
+
         // random number of coins from 1 to 3
-        let droppedCoins = Math.floor(Math.random() * 3 + 1);
-    
+        let droppedCoins = Math.floor(Math.random() * 3 + 1);    
 
         if (droppedCoins === 1) {
             boxText.innerHTML += "<br><p>You pick up <span class='gold' style='font-size:20px'>" + droppedCoins + "</span> coin!</p>"        
@@ -219,8 +221,17 @@ function lootDrop() {
             boxText.innerHTML += "<br>"
         }
 
-    stats.coins += droppedCoins;
-    }
+        stats.coins += droppedCoins;
+    };
+    
+    // Changes button from "Victory!" to "Head back"
+    document.getElementById("text").textContent = "Go back"
+        
+
+    // Button now sends you back to the main page
+    buttonContinue.addEventListener("click", function() {
+    window.location.replace("../index.html");
+    });
 }
 // -------------- END OF LOOT AREA -------------- //
 
