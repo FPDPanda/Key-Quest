@@ -3,7 +3,7 @@ window.addEventListener("load", setStats({
     health: 5,
     maxHealth: 5,
     bag: [],
-    weapons: ['Dagger'],
+    weapons: [],
     coins: 5
 }));
 
