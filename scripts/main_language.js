@@ -13,8 +13,8 @@ let english = document.getElementById("en");
 let chosenLanguage = "";
 
 // To make sure the language area will only appear once
-if(localStorage.language) {
-    language.style.display="none";
+if(!localStorage.language) {
+    language.style.display="flex";
 }
 
 // If the player selects Portuguese
