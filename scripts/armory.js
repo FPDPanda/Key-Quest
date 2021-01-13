@@ -19,7 +19,7 @@ window.addEventListener("load", function() {
 
 dagger.addEventListener("click", function() {
     stats.coins -= 5;
-    alert("You just bought a dagger!");
+    alert("You bought a dagger!");
     dagger.style.display = 'none';
     stats.weapons.push("Dagger");
     updateStats(stats);
@@ -29,7 +29,7 @@ axe.addEventListener("click", function() {
     if (stats.coins >= 20) {
         stats.coins -= 20;
         axe.style.display = 'none';
-        alert("You just bought an axe!");
+        alert("You bought an axe!");
         stats.weapons.push("Axe");
         updateStats(stats);
     } else {
@@ -41,7 +41,7 @@ sword.addEventListener("click", function() {
     if (stats.coins >= 40) {
         stats.coins -= 40;
         sword.style.display = 'none';
-        alert("You just bought a sword!");
+        alert("You bought a sword!");
         stats.weapons.push("Sword");
         updateStats(stats);
     } else {

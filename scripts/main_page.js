@@ -28,8 +28,8 @@ let explore = document.getElementById("button__explore");
 
 // When the player clicks on the explore button
 explore.addEventListener("click", function() {
-    if (stats.weapons.length === 0) {
-        // If the weapons array (located on stats) is empty
+    if (stats.weapons.includes('Dagger')) {
+        // If the player has a dagger
         window.location.replace("javascript:alert('You need a weapon! Visit the armory.')");
     } else {
         // If the player has a weapon
