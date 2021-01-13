@@ -1,4 +1,4 @@
-// -------------- LANGUAGES AREA -------------- //
+// -------------- LANGUAGES POP-UP -------------- //
 
 // Getting the languages area
 let language = document.getElementById("languages")
@@ -19,22 +19,22 @@ if(localStorage.language) {
 
 // If the player selects Portuguese
 portuguese.addEventListener("click", function() {
-    chosenLanguage = "portuguese"
+    chosenLanguage = "pt-br"
     language.style.display="none";
     setLanguage(chosenLanguage);
-
+    location.reload()
 });
 
 // If the player selects English
 english.addEventListener("click", function() {
-    chosenLanguage = "english"
+    chosenLanguage = "en"
     language.style.display="none";
     setLanguage(chosenLanguage);
-
+    location.reload()
 });
 
 // Updates the chosen language and puts it in localStorage
 function setLanguage(chosenLanguage) {
     localStorage.getItem("language")? 0 : localStorage.setItem("language", JSON.stringify(chosenLanguage));
 }
-// -------------- END OF LANGUAGES AREA -------------- //
+// -------------- END OF LANGUAGES POP-UP -------------- //
