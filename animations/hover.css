@@ -14,3 +14,18 @@
 .button img:hover {
     transform: rotate(-6deg)
 }
+
+/* ARMORY ANIMATIONS */
+.weapon_rack:hover {
+    transform: translateY(-0.5rem);
+
+    border: 2px solid red;
+
+    box-shadow: 0 0.5rem 2px -2px red;
+
+    cursor: pointer;
+}
+
+.weapon_rack img:hover {
+    transform: translateY(-1rem);
+}
