@@ -29,11 +29,11 @@ let explore = document.getElementById("button__explore");
 // When the player clicks on the explore button
 explore.addEventListener("click", function() {
     if (stats.weapons.includes('Dagger')) {
-        // If the player has a dagger
-        window.location.replace("javascript:alert('You need a weapon! Visit the armory.')");
-    } else {
         // If the player has a weapon
         window.location.replace("./pages/explore.html")
+    } else {
+        // If the player doesn't have a weapon
+        window.location.replace("javascript:alert('You need a weapon! Visit the armory.')");
     }
 });
 // -------------- END OF NEW PLAYER AREA ----------------- //
