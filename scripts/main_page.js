@@ -1,3 +1,31 @@
+// -------------- LANGUAGE AREA -------------- //
+// Getting the text in the explore button
+let exploreText = document.getElementById("button__explore__text");
+// Getting the text in the tavern button
+let tavernText = document.getElementById("button__tavern__text");
+// Getting the text in the armory button
+let armoryText = document.getElementById("button__armory__text");
+// Getting the text in the stats title
+let statsTitle = document.getElementById("stats__title__text");
+
+window.addEventListener("load", function() {
+    if(localStorage.language) {
+        chosenLanguage = JSON.parse(localStorage.language)
+    }
+    
+    $.getJSON("./language/"+chosenLanguage+".json", function(text){
+        exploreText.textContent = text.exploreBtn;
+        tavernText.textContent = text.tavernBtn;
+        armoryText.textContent = text.armoryBtn;
+        statsTitle.textContent = text.statsTitle;
+    
+    });
+
+});
+
+
+// -------------- END OF LANGUAGE AREA -------------- //
+
 // -------------- STATUS AREA -------------- //
 // Importing stats from main_stats.js
 let stats = JSON.parse(localStorage.getItem("stats"));
