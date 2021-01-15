@@ -1,8 +1,11 @@
 // -------------- LANGUAGE AREA -------------- //
+// Getting the speech from the storekeeper
 const bubble = document.getElementById("bubble__text");
 
+// Getting the return button
 const returnButton = document.getElementById("returnContainer__button__text")
 
+// Where the text will be stored
 let armoryText = {
     bubble1: "",
     boughtDagger: "",
@@ -48,10 +51,12 @@ function setText() {
 // Importing main stats from localStorage
 stats = JSON.parse(localStorage.getItem("stats"));
 
+// Getting the weapons from the DOM
 let dagger = document.getElementById("dagger");
 let axe = document.getElementById("axe");
 let sword = document.getElementById("sword")
 
+// Removes the weapons that were already bought
 window.addEventListener("load", function() {    
     if (stats.weapons.includes('Dagger')) {
         dagger.style.display = 'none';
@@ -64,35 +69,49 @@ window.addEventListener("load", function() {
     }
 })
 
+// Buying the Dagger
 dagger.addEventListener("click", function() {
+    // Purchase succeeded (Mandatory to begin the game)
     stats.coins -= 5;
-    alert("You bought a dagger!");
+    alert(armoryText.boughtDagger);
     dagger.style.display = 'none';
     stats.weapons.push("Dagger");
     updateStats(stats);
 });
 
+// Buying the Axe
 axe.addEventListener("click", function() {
+    // Purchase succeeded
     if (stats.coins >= 20) {
         stats.coins -= 20;
         axe.style.display = 'none';
-        alert("You bought an axe!");
+        alert(armoryText.boughtAxe);
         stats.weapons.push("Axe");
         updateStats(stats);
+    // Player needs one coin
+    } else if (stats.coins === 19) {
+        alert(armoryText.needOneCoin)
+    // Player needs more than one coin
     } else {
-        alert("You need " + (20 - stats.coins) + " more coins to purchase this.")
+        alert(armoryText.needCoin1 + (20 - stats.coins) + armoryText.needCoin2);
     }
 });
 
+// Buying the Sword
 sword.addEventListener("click", function() {
+    // Purchase succeeded
     if (stats.coins >= 40) {
         stats.coins -= 40;
         sword.style.display = 'none';
-        alert("You bought a sword!");
+        alert(armoryText.boughtSword);
         stats.weapons.push("Sword");
         updateStats(stats);
+    // Player needs one coin
+    } else if (stats.coins === 39) {
+        alert(armoryText.needOneCoin)
+    // Player needs more than one coin
     } else {
-        alert("You need " + (40 - stats.coins) + " more coins to purchase this.")
+        alert(armoryText.needCoin1 + (40 - stats.coins) + armoryText.needCoin2);
     }
 });
 
