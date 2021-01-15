@@ -1,13 +1,13 @@
 // -------------- LANGUAGES POP-UP -------------- //
 
 // Getting the languages area
-let language = document.getElementById("languages")
+const language = document.getElementById("languages")
 
 // Getting the language buttons
 //Portuguese
-let portuguese = document.getElementById("pt-br");
+const portuguese = document.getElementById("pt-br");
 //English
-let english = document.getElementById("en");
+const english = document.getElementById("en");
 
 // This is what will be put in localStorage
 let chosenLanguage = "";

@@ -52,7 +52,7 @@ function scroll() {
 
 // -------------- 3. MONSTER AREA -------------- //
 // Getting the monster area
-let monsterArea = document.getElementById("monster");
+const monsterArea = document.getElementById("monster");
 
 // Randomizing the encounter and checking it with this
 let encounterChance = 0;

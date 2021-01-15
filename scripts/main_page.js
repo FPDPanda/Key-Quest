@@ -1,12 +1,12 @@
 // -------------- LANGUAGE AREA -------------- //
 // Getting the text in the explore button
-let exploreText = document.getElementById("button__explore__text");
+const exploreText = document.getElementById("button__explore__text");
 // Getting the text in the tavern button
-let tavernText = document.getElementById("button__tavern__text");
+const tavernText = document.getElementById("button__tavern__text");
 // Getting the text in the armory button
-let armoryText = document.getElementById("button__armory__text");
+const armoryText = document.getElementById("button__armory__text");
 // Getting the text in the stats title
-let statsTitle = document.getElementById("stats__title__text");
+const statsTitle = document.getElementById("stats__title__text");
 
 window.addEventListener("load", function() {
     if(localStorage.language) {
