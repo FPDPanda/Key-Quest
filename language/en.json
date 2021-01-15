@@ -5,4 +5,14 @@
     "tavernBtn": "Tavern",
     "armoryBtn": "Armory",
     "statsTitle": "Your stats",
+
+    "armoryBubble1": "Take what you will, leave your coins.",
+    "armoryBoughtDagger": "You bought a dagger!",
+    "armoryBoughtAxe": "You bought an axe!",
+    "armoryBoughtSword": "You bought a sword!",
+    "armoryNeedOneCoin": "You need one more coin to purchase this.",    
+    "armoryNeedCoin1": "You need ",
+    "armoryNeedCoin2": " more coins to purchase this.",
+
+    "returnButton": "Return"
 }
