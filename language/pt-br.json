@@ -5,4 +5,14 @@
     "tavernBtn": "Taverna",
     "armoryBtn": "Arsenal",
     "statsTitle": "Seus stats",
+
+    "armoryBubble1": "Leve o que quiser, mas deixe suas moedas.",
+    "armoryBoughtDagger": "Você comprou uma adaga!",
+    "armoryBoughtAxe": "Você comprou um machado!",
+    "armoryBoughtSword": "Você comprou uma espada!",
+    "armoryNeedOneCoin": "Você precisa de mais uma moeda para comprar isso.",    
+    "armoryNeedCoin1": "Você precisa de mais ",
+    "armoryNeedCoin2": " moedas para comprar isso.",
+
+    "returnButton": "Voltar"
 }
