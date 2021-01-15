@@ -8,22 +8,21 @@ const armoryText = document.getElementById("button__armory__text");
 // Getting the text in the stats title
 const statsTitle = document.getElementById("stats__title__text");
 
+let exploreWarning = "";
+
 window.addEventListener("load", function() {
     if(localStorage.language) {
-        chosenLanguage = JSON.parse(localStorage.language)
-    }
-    
+        chosenLanguage = JSON.parse(localStorage.language);
+    };
+
     $.getJSON("./language/"+chosenLanguage+".json", function(text){
+        exploreWarning = text.exploreWarning;
         exploreText.textContent = text.exploreBtn;
         tavernText.textContent = text.tavernBtn;
         armoryText.textContent = text.armoryBtn;
         statsTitle.textContent = text.statsTitle;
-    
     });
-
 });
-
-
 // -------------- END OF LANGUAGE AREA -------------- //
 
 // -------------- STATUS AREA -------------- //
@@ -58,10 +57,10 @@ let explore = document.getElementById("button__explore");
 explore.addEventListener("click", function() {
     if (stats.weapons.includes('Dagger')) {
         // If the player has a weapon
-        window.location.replace("./pages/explore.html")
+        window.location.replace("./pages/explore.html");
     } else {
         // If the player doesn't have a weapon
-        window.location.replace("javascript:alert('You need a weapon! Visit the armory.')");
+        window.location.replace("javascript:alert('"+exploreWarning+"')");
     }
 });
 // -------------- END OF NEW PLAYER AREA ----------------- //
