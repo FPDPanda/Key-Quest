@@ -1,3 +1,50 @@
+// -------------- LANGUAGE AREA -------------- //
+const bubble = document.getElementById("bubble__text");
+
+const returnButton = document.getElementById("returnContainer__button__text")
+
+let armoryText = {
+    bubble1: "",
+    boughtDagger: "",
+    boughtAxe: "",
+    boughtSword: "",
+    needOneCoin: "",
+    needCoin1: "",
+    needCoin2: "",
+
+    returnButton: "",
+}
+
+
+window.addEventListener("load", function() {
+    if(localStorage.language) {
+        chosenLanguage = JSON.parse(localStorage.language)
+    }
+
+    $.getJSON("../language/"+chosenLanguage+".json", function(text){
+        armoryText.bubble1      = text.armoryBubble1;
+        armoryText.boughtDagger = text.armoryBoughtDagger;
+        armoryText.boughtAxe    = text.armoryBoughtAxe;
+        armoryText.boughtSword  = text.armoryBoughtSword;
+        armoryText.needOneCoin  = text.armoryNeedOneCoin;
+        armoryText.needCoin1    = text.armoryNeedCoin1;
+        armoryText.needCoin2    = text.armoryNeedCoin2;
+        
+        armoryText.returnButton    = text.returnButton;
+        
+        
+
+        setText()
+    });
+});
+
+function setText() {
+    bubble.textContent = armoryText.bubble1
+
+    returnButton.textContent = armoryText.returnButton
+}
+// -------------- END OF LANGUAGE AREA -------------- //
+
 // Importing main stats from localStorage
 stats = JSON.parse(localStorage.getItem("stats"));
 
