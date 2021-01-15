@@ -23,7 +23,7 @@
 }
 
 #languages img {
-    width: clamp(250px, 100%, 35vw);
+    width: clamp(150px, 100%, 35vw);
 }
 
 #languages h3 {
@@ -37,7 +37,7 @@
 }
 
 /* MEDIA QUERIES */
-@media (max-width: 750px) {
+@media (max-width: 900px) {
     #languages {
         flex-direction: column;
         top:0;
