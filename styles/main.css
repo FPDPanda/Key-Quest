@@ -82,7 +82,7 @@ main {
     text-align: center;
 }
 
-#stats__title h2 {
+#stats__title__text {
     font-size: 2rem;
     margin-bottom: 1vh;
 }
