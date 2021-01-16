@@ -8,6 +8,7 @@ const armoryText = document.getElementById("button__armory__text");
 // Getting the text in the stats title
 const statsTitle = document.getElementById("stats__title__text");
 
+//This is where the warning text will be stored (for new players)
 let exploreWarning = "";
 
 window.addEventListener("load", function() {
