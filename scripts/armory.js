@@ -15,7 +15,7 @@ let armoryText = {
     needCoin1: "",
     needCoin2: "",
 
-    returnButton: "",
+    escapeButton: "",
 }
 
 
@@ -32,10 +32,8 @@ window.addEventListener("load", function() {
         armoryText.needOneCoin  = text.armoryNeedOneCoin;
         armoryText.needCoin1    = text.armoryNeedCoin1;
         armoryText.needCoin2    = text.armoryNeedCoin2;
-        
-        armoryText.returnButton    = text.returnButton;
-        
-        
+
+        armoryText.escapeButton    = text.returnButton; 
 
         setText()
     });
@@ -44,7 +42,7 @@ window.addEventListener("load", function() {
 function setText() {
     bubble.textContent = armoryText.bubble1
 
-    returnButton.textContent = armoryText.returnButton
+    returnButton.textContent = armoryText.escapeButton
 }
 // -------------- END OF LANGUAGE AREA -------------- //
 
