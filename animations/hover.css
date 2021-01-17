@@ -1,3 +1,4 @@
+/* SLIGHT SHAKE ANIMATION */
 .button:hover {
     transform: translateY(-0.5rem);
 
@@ -15,8 +16,9 @@
     transform: rotate(-6deg)
 }
 
-/* ARMORY ANIMATIONS */
-.weapon_rack:hover {
+/* SLIGHT RAISE + BOX SHADOW ANIMATION */
+.raise:hover {
+    transition-duration: 0.3s;
     transform: translateY(-0.5rem);
 
     border: 2px solid red;
@@ -24,8 +26,38 @@
     box-shadow: 0 0.5rem 2px -2px red;
 
     cursor: pointer;
+
+    transition-duration: 0.3s;
 }
 
-.weapon_rack img:hover {
-    transform: translateY(-1rem);
+.raise img:hover {    
+    transform: translateY(-0.5rem);
+    transition-duration: 0.3s;
+}
+
+/* TRANSFORM ANIMATION */
+.transform-box {
+    overflow: hidden;
+    height: 55%;
+
+    cursor: pointer;
+}
+
+.transform {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+
+    gap: 10px;
+    transition: 1.5s;
+}
+
+.transform img {
+    width: clamp(90px, 80%, 130px);
+}
+
+.transform:hover {
+    transform: translateY(-100%);
 }

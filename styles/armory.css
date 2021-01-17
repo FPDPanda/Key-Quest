@@ -60,7 +60,7 @@ main {
 }
 
 /* Weapons area */
-.weaponSpace {
+.weapons {
     grid-area: wpns;
 
     height: 65vh;
@@ -70,17 +70,16 @@ main {
     grid-template-rows: 60vh;
 }
 
-.weapon_rack {
+.weapon__rack {
     justify-self: center;
     align-self: center;    
-    height: 40%;
     width: clamp(135px, 30%, 30vh);
+    height: 40%;
 
     background: url("../images/bg/wooden-racks.jpg");
     color: #ffff42;    
     border: 2px solid #fff;
     border-radius: 20px;
-    transition-duration: 0.3s;
 
     display: flex;
     flex-direction: column;
@@ -88,7 +87,7 @@ main {
     justify-content: center;
 }
 
-.weapon_rack img {
+.weapon__rack img {
     max-height: 80%;
     transition-duration: 0.5s;
 }
