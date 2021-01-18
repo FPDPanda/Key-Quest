@@ -73,6 +73,12 @@ dagger.addEventListener("click", function() {
     alert(armoryText.boughtDagger);
     dagger.style.display = 'none';
     stats.weapons.push("Dagger");
+
+    // Reduces the rows in the grid after buying the dagger
+    for (let i = 0; i < weaponsSpace.length; i++) {
+        weaponsSpace[i].style.gridTemplateRows = '1fr';
+    }
+    
     updateStats(stats);
 });
 

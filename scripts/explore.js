@@ -359,5 +359,5 @@ function lootDrop() {
 //Updates the status on the localStorage
 function updateStats(stats) {
   localStorage.setItem("stats", JSON.stringify(stats));
-}
+};
 // --------------------------------- END OF STATUS UPDATE --------------------------------- //

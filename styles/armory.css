@@ -74,7 +74,6 @@ main {
     justify-self: center;
     align-self: center;    
     width: clamp(135px, 30%, 30vh);
-    height: 40%;
 
     background: url("../images/bg/wooden-racks.jpg");
     color: #ffff42;    
@@ -162,10 +161,9 @@ main {
     .game {
         background-size: 300px;
     }
-    .weaponSpace {
+    .weapons {
         grid-template-columns: 50vw 50vw;
-        grid-template-rows: 50vh;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 35vh 35vh
     }
     #returnContainer {
         width: 70%;
