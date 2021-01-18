@@ -99,7 +99,7 @@ let exploreText = {
     dropCoins: "",
     pickUpCoin: "",
     pickUpCoins: ""
-}
+};
 
 window.addEventListener("load", function() {
     if(localStorage.language) {
@@ -145,7 +145,7 @@ window.addEventListener("load", function() {
 
     setText();
 
-    escapeButton.textContent = exploreText.escapeButton
+    escapeButton.textContent = exploreText.escapeButton;
     });
 });
 // --------------------------------- END OF LANGUAGE AREA --------------------------------- //
@@ -168,7 +168,7 @@ let monsters = {
   ogreSize: "25vh",
   orc: "url(../images/monsters/orc__idle.gif)",
   orcSize: "28vh",
-}
+};
 // Generates a random number between 1 and 100
 encounterChance = Math.floor(Math.random() * 100 + 1);
 
@@ -189,7 +189,7 @@ if (encounterChance <= 70) {
   monster = "orc";
   monsterArea.style.backgroundImage = monsters.orc;
   monsterArea.style.backgroundSize = monsters.orcSize;
-}
+};
 // --------------------------------- END OF MONSTER AREA --------------------------------- //
 
 // --------------------------------- 5. BATTLE AREA --------------------------------- //
@@ -267,27 +267,24 @@ function fight() {
 }
 
 function monsterAttack() {
-if (monster === "goblin") {
-    boxText.innerHTML += "<p>"+exploreText.goblinAttack+"</p>";
-}
-else if (monster === "ogre") {
-    boxText.innerHTML += "<p>"+exploreText.ogreAttack+"</p>";
-}
-else if (monster === "orc") {
-    boxText.innerHTML += "<p>"+exploreText.orcAttack+"</p>";
-
-}
+  if (monster === "goblin") {
+    boxText.innerHTML += "<p>"+exploreText.goblinAttack+"</p>"
+  } else if (monster === "ogre") {
+    boxText.innerHTML += "<p>"+exploreText.ogreAttack+"</p>"
+  } else if (monster === "orc") {
+    boxText.innerHTML += "<p>"+exploreText.orcAttack+"</p>"
+  }
+  
   stats.health--;
   boxText.innerHTML += "<br><p class='red'>"+exploreText.hurtMessage+"</p>";
   boxText.innerHTML +=
     "<br><p>"+exploreText.updateHPMesage+" <span class='red'>" +
-    stats.health +
-    "</span></p>";
+    stats.health + "</span></p>";
   boxText.innerHTML += "<br>";
 }
 
 function playerAttack() {
-  let chosenWeapon = stats.weapons[stats.weapons.length-1]
+  let chosenWeapon = stats.weapons[stats.weapons.length-1];
   if (chosenWeapon === 'Dagger') {
     boxText.innerHTML +=
       "<p>"+exploreText.playerAttackDagger+"<span class='grey'>"+exploreText.dagger+"!</span></p>";
@@ -355,7 +352,7 @@ function lootDrop() {
   buttonContinue.addEventListener("click", function () {
     window.location.replace("../index.html");
   });
-}
+};
 // --------------------------------- END OF LOOT AREA --------------------------------- //
 
 // --------------------------------- 7. STATUS UPDATE --------------------------------- //

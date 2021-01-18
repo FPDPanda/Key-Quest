@@ -1,6 +1,5 @@
 // Importing stats from main_stats.js
-/* *** DO LET STATS WHEN YOU CREATE A SEPARATE PAGE FOR THE TAVERN */
-stats = JSON.parse(localStorage.getItem("stats"));
+let stats = JSON.parse(localStorage.getItem("stats"));
 
 // -------------- LANGUAGE AREA -------------- //
 //This is where the tavern message will be stored

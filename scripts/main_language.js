@@ -1,7 +1,7 @@
 // -------------- LANGUAGES POP-UP -------------- //
 
 // Getting the languages area
-const language = document.getElementById("languages")
+const language = document.getElementById("languages");
 
 // Getting the language buttons
 //Portuguese
@@ -19,7 +19,7 @@ if(!localStorage.language) {
 
 // If the player selects Portuguese
 portuguese.addEventListener("click", function() {
-    chosenLanguage = "pt-br"
+    chosenLanguage = "pt-br";
     language.style.display="none";
     setLanguage(chosenLanguage);
     location.reload()
@@ -27,7 +27,7 @@ portuguese.addEventListener("click", function() {
 
 // If the player selects English
 english.addEventListener("click", function() {
-    chosenLanguage = "en"
+    chosenLanguage = "en";
     language.style.display="none";
     setLanguage(chosenLanguage);
     location.reload()

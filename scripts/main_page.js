@@ -41,8 +41,8 @@ window.addEventListener("load", function() {
         displayedHealth.classList.add('red');
     }
 
-    displayedCoins.classList.add('gold')
-    displayedWeapon.classList.add('grey')
+    displayedCoins.classList.add('gold');
+    displayedWeapon.classList.add('grey');
 
     displayedHealth.textContent = stats.health;
     displayedCoins.textContent = stats.coins;

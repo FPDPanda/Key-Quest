@@ -3,7 +3,7 @@
 const bubble = document.getElementById("bubble__text");
 
 // Getting the return button
-const returnButton = document.getElementById("returnContainer__button__text")
+const returnButton = document.getElementById("returnContainer__button__text");
 
 // Where the text will be stored
 let armoryText = {
@@ -16,12 +16,11 @@ let armoryText = {
     needCoin2: "",
 
     escapeButton: "",
-}
-
+};
 
 window.addEventListener("load", function() {
     if(localStorage.language) {
-        chosenLanguage = JSON.parse(localStorage.language)
+        chosenLanguage = JSON.parse(localStorage.language);
     }
 
     $.getJSON("../language/"+chosenLanguage+".json", function(text){
@@ -33,29 +32,29 @@ window.addEventListener("load", function() {
         armoryText.needCoin1    = text.armoryNeedCoin1;
         armoryText.needCoin2    = text.armoryNeedCoin2;
 
-        armoryText.escapeButton    = text.returnButton; 
+        armoryText.escapeButton    = text.returnButton;
 
         setText()
     });
 });
 
 function setText() {
-    bubble.textContent = armoryText.bubble1
-
-    returnButton.textContent = armoryText.escapeButton
+    bubble.textContent = armoryText.bubble1;
+    returnButton.textContent = armoryText.escapeButton;
 }
 // -------------- END OF LANGUAGE AREA -------------- //
 
 // Importing main stats from localStorage
 stats = JSON.parse(localStorage.getItem("stats"));
 
-// Getting the weapons from the DOM
+// Getting the weapons and weapons space from the DOM
+let weaponsSpace = document.getElementsByClassName("weapons");
 let dagger = document.getElementById("dagger");
 let axe = document.getElementById("axe");
-let sword = document.getElementById("sword")
+let sword = document.getElementById("sword");
 
 // Removes the weapons that were already bought
-window.addEventListener("load", function() {    
+window.addEventListener("load", function() {
     if (stats.weapons.includes('Dagger')) {
         dagger.style.display = 'none';
     }
@@ -65,7 +64,7 @@ window.addEventListener("load", function() {
     if (stats.weapons.includes('Sword')) {
         sword.style.display = 'none';
     }
-})
+});
 
 // Buying the Dagger
 dagger.addEventListener("click", function() {
@@ -88,7 +87,7 @@ axe.addEventListener("click", function() {
         updateStats(stats);
     // Player needs one coin
     } else if (stats.coins === 19) {
-        alert(armoryText.needOneCoin)
+        alert(armoryText.needOneCoin);
     // Player needs more than one coin
     } else {
         alert(armoryText.needCoin1 + (20 - stats.coins) + armoryText.needCoin2);
@@ -106,7 +105,7 @@ sword.addEventListener("click", function() {
         updateStats(stats);
     // Player needs one coin
     } else if (stats.coins === 39) {
-        alert(armoryText.needOneCoin)
+        alert(armoryText.needOneCoin);
     // Player needs more than one coin
     } else {
         alert(armoryText.needCoin1 + (40 - stats.coins) + armoryText.needCoin2);
