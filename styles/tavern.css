@@ -164,3 +164,22 @@ main {
         width: 70%;
     }
 }
+
+/* Fixes the transform animation on mobile*/
+@media (min-height: 760px) and (max-height: 980px) {
+    
+    #sleep__moon, 
+    #sleep__sun {
+        width: 92px;
+    
+    }
+}
+
+@media (max-height: 760px) {
+    
+    #sleep__moon, 
+    #sleep__sun {
+        width: 80px;
+    
+    }
+}
