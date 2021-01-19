@@ -1,3 +1,10 @@
+// --------------------------------- 2. GLOBAL FUNCTIONS --------------------------------- //
+// Scroll Function - A basic function to scroll down and show all the text
+function scroll() {
+    bubble.scrollTop = bubble.scrollHeight;
+  }
+// --------------------------------- END OF GLOBAL FUNCTIONS --------------------------------- //
+
 // -------------- LANGUAGE AREA -------------- //
 // Getting the speech from the storekeeper
 const bubble = document.getElementById("bubble__text");
@@ -7,7 +14,7 @@ const returnButton = document.getElementById("returnContainer__button__text");
 
 // Where the text will be stored
 let armoryText = {
-    bubble1: "",
+    armoryMessages: [],
     boughtDagger: "",
     boughtAxe: "",
     boughtSword: "",
@@ -24,25 +31,30 @@ window.addEventListener("load", function() {
     }
 
     $.getJSON("../language/"+chosenLanguage+".json", function(text){
-        armoryText.bubble1      = text.armoryBubble1;
+        armoryText.armoryMessages = text.armoryMessages;
         armoryText.boughtDagger = text.armoryBoughtDagger;
         armoryText.boughtAxe    = text.armoryBoughtAxe;
         armoryText.boughtSword  = text.armoryBoughtSword;
-        armoryText.needOneCoin  = text.armoryNeedOneCoin;
-        armoryText.needCoin1    = text.armoryNeedCoin1;
-        armoryText.needCoin2    = text.armoryNeedCoin2;
+        armoryText.needOneCoin  = text.needOneCoin;
+        armoryText.needCoin1    = text.needCoin1;
+        armoryText.needCoin2    = text.needCoin2;
 
-        armoryText.escapeButton    = text.returnButton;
+        armoryText.escapeButton = text.returnButton;
 
         setText()
     });
 });
 
 function setText() {
-    bubble.textContent = armoryText.bubble1;
+    rand = Math.floor(Math.random()*5);
+    bubble.textContent = armoryText.armoryMessages[rand];
+
     returnButton.textContent = armoryText.escapeButton;
 }
 // -------------- END OF LANGUAGE AREA -------------- //
+
+// This is where the random number will be stored
+let rand = 0;
 
 // Importing main stats from localStorage
 stats = JSON.parse(localStorage.getItem("stats"));
@@ -70,7 +82,7 @@ window.addEventListener("load", function() {
 dagger.addEventListener("click", function() {
     // Purchase succeeded (Mandatory to begin the game)
     stats.coins -= 5;
-    alert(armoryText.boughtDagger);
+    bubble.innerHTML += "<p>" + armoryText.boughtDagger + "</p>";
     dagger.style.display = 'none';
     stats.weapons.push("Dagger");
 
@@ -78,7 +90,8 @@ dagger.addEventListener("click", function() {
     for (let i = 0; i < weaponsSpace.length; i++) {
         weaponsSpace[i].style.gridTemplateRows = '1fr';
     }
-    
+
+    scroll();
     updateStats(stats);
 });
 
@@ -88,16 +101,19 @@ axe.addEventListener("click", function() {
     if (stats.coins >= 20) {
         stats.coins -= 20;
         axe.style.display = 'none';
-        alert(armoryText.boughtAxe);
+        bubble.innerHTML += "<p>" + armoryText.boughtAxe + "</p>";
         stats.weapons.push("Axe");
         updateStats(stats);
     // Player needs one coin
     } else if (stats.coins === 19) {
-        alert(armoryText.needOneCoin);
+        bubble.innerHTML += "<p>" + armoryText.needOneCoin + "</p>";
     // Player needs more than one coin
     } else {
-        alert(armoryText.needCoin1 + (20 - stats.coins) + armoryText.needCoin2);
+        bubble.innerHTML += "<p>" + armoryText.needCoin1 + (20 - stats.coins) + armoryText.needCoin2 + "</p>";
     }
+    
+    scroll();
+    updateStats(stats);
 });
 
 // Buying the Sword
@@ -106,16 +122,18 @@ sword.addEventListener("click", function() {
     if (stats.coins >= 40) {
         stats.coins -= 40;
         sword.style.display = 'none';
-        alert(armoryText.boughtSword);
+        bubble.innerHTML += "<p>" + armoryText.boughtSword + "</p>";
         stats.weapons.push("Sword");
-        updateStats(stats);
     // Player needs one coin
     } else if (stats.coins === 39) {
-        alert(armoryText.needOneCoin);
+        bubble.innerHTML += "<p>" + armoryText.needOneCoin + "</p>";
     // Player needs more than one coin
     } else {
-        alert(armoryText.needCoin1 + (40 - stats.coins) + armoryText.needCoin2);
+        bubble.innerHTML += "<p>" + armoryText.needCoin1 + (40 - stats.coins) + armoryText.needCoin2 + "</p>";
     }
+    
+    scroll();
+    updateStats(stats);
 });
 
 // -------------- 6. STATUS UPDATE -------------- //
