@@ -348,8 +348,8 @@ function lootDrop() {
     boxText.innerHTML += "<br>";
   }
 
-  // Coin drops (50% chance)
-  if (droppedLoot > 4) {
+  // Coin drops (70% chance)
+  if (droppedLoot > 3) {
     boxText.innerHTML +=
       "<p>"+exploreText.dropCoins+"<span class='gold' style='font-size:20px'> "+exploreText.coins+"!</span></p>";
     boxText.innerHTML += "<br>";

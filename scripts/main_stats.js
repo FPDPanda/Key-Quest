@@ -4,7 +4,7 @@ window.addEventListener("load", setStats({
     maxHealth: 5,
     bag: [],
     weapons: [],
-    coins: 5
+    coins: 10
 }));
 
 // This is the function that will set all the stats (ONLY ONCE)
