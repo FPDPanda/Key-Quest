@@ -1,5 +1,7 @@
 {
     "exploreWarning": "Você precisa se armar! Visite o Arsenal.",
+    "tavernWarning": "A taverna está fechada. Visite o Arsenal.",
+
     "exploreBtn": "Explorar",
     "tavernBtn": "Taverna",
     "armoryBtn": "Arsenal",
