@@ -37,7 +37,7 @@
 
 // --------------------------------- 1. IMPORT AREA --------------------------------- //
 // Importing main stats from localStorage
-let stats = JSON.parse(localStorage.getItem("stats"));
+stats = JSON.parse(localStorage.getItem("stats"));
 
 // Importing language from localStorage
 mainLanguage = JSON.parse(localStorage.getItem("language"));
@@ -172,24 +172,53 @@ let monsters = {
 // Generates a random number between 1 and 100
 encounterChance = Math.floor(Math.random() * 100 + 1);
 
-// 70% chance
-if (encounterChance <= 70) {
-  monster = "goblin";
-  monsterArea.style.backgroundImage = monsters.goblin;
-  monsterArea.style.backgroundSize = monsters.goblinSize;
+/* Monster encounter chances change depending on your weapon:
+      Dagger - Goblin (80%), Ogre (19%), Orc (1%)  
+      Axe - Goblin (55%), Ogre(35%), Orc (10%)
+      Sword - Goblin (30%), Ogre (50%), Orc (20%)
+*/
+window.addEventListener("load", function() {  
+  let chosenWeapon = stats.weapons[stats.weapons.length-1];
 
-  // 20% chance
-} else if (encounterChance > 70 && encounterChance <= 90) {
-  monster = "ogre";
-  monsterArea.style.backgroundImage = monsters.ogre;
-  monsterArea.style.backgroundSize = monsters.ogreSize;
+  if (chosenWeapon === "Dagger") {
+    encounter('Dagger');
+  } else if (chosenWeapon === "Axe") {
+    encounterAxe('Axe');
+  } else if (chosenWeapon === "Sword") {
+    encounterSword('Sword');
+  }
+});
 
-  // 10% chance
-} else if (encounterChance > 90) {
-  monster = "orc";
-  monsterArea.style.backgroundImage = monsters.orc;
-  monsterArea.style.backgroundSize = monsters.orcSize;
-};
+function encounter(weapon) {
+  let chances = {
+    Dagger: [80,  19, 1],
+    Axe: [55,  35, 10],
+    Sword: [30,  50, 20],
+  };
+
+  // If smaller than the first value (80%, 55% or 30% depending on the weapon)
+  if (encounterChance <= chances[weapon][0]) {
+
+    monster = "goblin";
+    monsterArea.style.backgroundImage = monsters.goblin;
+    monsterArea.style.backgroundSize = monsters.goblinSize;
+
+  // If smaller than the the sum of the first two values (99%, 90% or 80% depending on the weapon)
+  } else if (encounterChance > chances[weapon][0] && encounterChance <= (chances[weapon][0]+chances[weapon][1])) {
+
+    monster = "ogre";
+    monsterArea.style.backgroundImage = monsters.ogre;
+    monsterArea.style.backgroundSize = monsters.ogreSize;
+
+  // If bigger than the the sum of the first two values (99%, 90% or 80% depending on the weapon)
+  } else if (encounterChance > (chances[weapon][0]+chances[weapon][1])) {
+
+    monster = "orc";
+    monsterArea.style.backgroundImage = monsters.orc;
+    monsterArea.style.backgroundSize = monsters.orcSize;
+
+  }
+}
 // --------------------------------- END OF MONSTER AREA --------------------------------- //
 
 // --------------------------------- 5. BATTLE AREA --------------------------------- //
