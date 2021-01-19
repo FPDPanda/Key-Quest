@@ -160,9 +160,11 @@ main {
 }
 
 @media (max-width: 500px) {
+
     #returnContainer {
         width: 70%;
     }
+    
 }
 
 /* Fixes the transform animation on mobile*/
@@ -173,6 +175,7 @@ main {
         width: 92px;
     
     }
+
 }
 
 @media (max-height: 760px) {
@@ -182,4 +185,5 @@ main {
         width: 80px;
     
     }
+
 }
