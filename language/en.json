@@ -1,19 +1,21 @@
 {
     "exploreWarning": "You need a weapon! Visit the Armory.",
     "exploreBtn": "Explore",
-    "tavernMessage": "You completely restored your HP!",
     "tavernBtn": "Tavern",
     "armoryBtn": "Armory",
     "statsTitle": "Your stats",
 
-    "armoryBubble1": "Take what you will, leave your coins.",
+    "armoryMessages": [
+        "Smith - \"Take what you will, leave your coins.\"",
+        "Smith - \"A dagger is enough to kill goblins, but you might need something stronger if you want to face an Ogre.\"",
+        "Smith - \"The axe is a strong weapon but it lacks mobility.\"",
+        "Smith - \"Orcs are way too strong. Daggers don't do enough damage and it's hard to avoid it's charge if you're holding an axe. The only hope of surviving is to have a sword, or to run.\"",
+        "Smith - \"Don't underestimate the importance of a shield\"",
+        "Smith - \"Even with the best equipment out there, you die if your HP reaches 0.\""
+    ],
     "armoryBoughtDagger": "You bought a dagger!",
     "armoryBoughtAxe": "You bought an axe!",
     "armoryBoughtSword": "You bought a sword!",
-    "armoryNeedOneCoin": "You need one more coin to purchase this.",    
-    "armoryNeedCoin1": "You need ",
-    "armoryNeedCoin2": " more coins to purchase this.",
-    "returnButton": "Return",
 
     "goblin": "Goblin",
     "goblins": "Goblins",
@@ -49,5 +51,25 @@
     "dropNoLoot": "The monster had nothing.",
     "dropCoins": "The monster was holding some ",
     "pickUpCoin": "You pick up ",
-    "pickUpCoins": "You pick up "
+    "pickUpCoins": "You pick up ",
+
+    "tavernFirstMessage": "IMPORTANT - You can sleep here to recover your HP, if you have no health and no coins it's game over. Spend your coins wisely.",
+    "tavernMessages": [
+        "Barkeeper - \"Did you fight one of those small green things? They're annoying but easy to kill.\"",
+        "Barkeeper - \"You saw an Ogre? Watch out for them, they hit hard.\"",
+        "Barkeeper - \"I'd say you'd need at least an axe and a shield if you want to fight an Ogre. But it'll still be a tough fight.\"",
+        "Barkeeper - \"If you see an Orc, run away. Unless you have the best equipment money can buy.\"",
+        "Barkeeper - \"The strongest monster in this forest is the Orc. But don't worry, they only seek strong prey.\"",
+        "Barkeeper - \"Run away if you don't have enough HP, it's shameful but it beats dying.\"",
+        "Barkeeper - \"A key? I got a bunch of them. Probably not the one you are looking for, though.\""
+    ],
+    "sleepMessage": "You completely restored your HP!",
+    "buyHPMessage1": "You drink the crimson potion and feel stronger!",
+    "buyHPMessage2": "Your HP increased by 1!",
+    
+    
+    "needOneCoin": "You need one more coin to purchase this.",
+    "needCoin1": "You need ",
+    "needCoin2": " more coins to purchase this.",
+    "returnButton": "Return"
 }
