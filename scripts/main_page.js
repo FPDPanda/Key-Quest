@@ -8,8 +8,9 @@ const armoryText = document.getElementById("button__armory__text");
 // Getting the text in the stats title
 const statsTitle = document.getElementById("stats__title__text");
 
-//This is where the warning text will be stored (for new players)
+//This is where the warning texts will be stored (for new players)
 let exploreWarning = "";
+let tavernWarning = "";
 
 window.addEventListener("load", function() {
     if(localStorage.language) {
@@ -17,6 +18,7 @@ window.addEventListener("load", function() {
     };
 
     $.getJSON("./language/"+chosenLanguage+".json", function(text){
+        tavernWarning = text.tavernWarning;
         exploreWarning = text.exploreWarning;
         exploreText.textContent = text.exploreBtn;
         tavernText.textContent = text.tavernBtn;
@@ -54,7 +56,10 @@ window.addEventListener("load", function() {
 // Getting the explore button
 let explore = document.getElementById("button__explore");
 
-// When the player clicks on the explore button
+// Getting the tavern button
+let tavern = document.getElementById("button__tavern");
+
+// When the player clicks on the explore button before buying a weapon.
 explore.addEventListener("click", function() {
     if (stats.weapons.includes('Dagger')) {
         // If the player has a weapon
@@ -62,6 +67,17 @@ explore.addEventListener("click", function() {
     } else {
         // If the player doesn't have a weapon
         window.location.replace("javascript:alert('"+exploreWarning+"')");
+    }
+});
+
+// When the player clicks on the tavern button before buying a weapon.
+tavern.addEventListener("click", function() {
+    if (stats.weapons.includes('Dagger')) {
+        // If the player has a weapon
+        window.location.replace("./pages/tavern.html");
+    } else {
+        // If the player doesn't have a weapon
+        window.location.replace("javascript:alert('"+tavernWarning+"')");
     }
 });
 // -------------- END OF NEW PLAYER AREA ----------------- //
