@@ -1,5 +1,7 @@
 {
     "exploreWarning": "You need a weapon! Visit the Armory.",
+    "tavernWarning": "The tavern is closed. Visit the Armory.",
+
     "exploreBtn": "Explore",
     "tavernBtn": "Tavern",
     "armoryBtn": "Armory",
