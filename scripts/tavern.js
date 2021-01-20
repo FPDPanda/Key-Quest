@@ -72,19 +72,19 @@ function setText() {
 
 sleepButton.addEventListener("click", function() {
     // If you have enough coin
-    if (stats.coins >= 5) {
+    if (stats.coins >= 3) {
         stats.health = stats.maxHealth;
-        stats.coins -= 5
+        stats.coins -= 3
         
         bubble.innerHTML += "<p class='dark-blue'>" + tavernText.sleepMessage + "</p>";
 
-    // If you have 9 coins (need 1 more)
-    } else if(stats.coins === 4) {
+    // If you have 2 coins (need 1 more)
+    } else if(stats.coins === 2) {
         bubble.innerHTML += "<p>" + tavernText.needOneCoin + "</p>";
 
     // If you need more than 1 coin
     } else {
-        bubble.innerHTML += "<p>" + tavernText.needCoin1 + (5-stats.coins) + tavernText.needCoin2 + "</p>";
+        bubble.innerHTML += "<p>" + tavernText.needCoin1 + (2-stats.coins) + tavernText.needCoin2 + "</p>";
 
     }
 
