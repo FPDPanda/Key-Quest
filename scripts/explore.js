@@ -183,9 +183,9 @@ window.addEventListener("load", function() {
   if (chosenWeapon === "Dagger") {
     encounter('Dagger');
   } else if (chosenWeapon === "Axe") {
-    encounterAxe('Axe');
+    encounter('Axe');
   } else if (chosenWeapon === "Sword") {
-    encounterSword('Sword');
+    encounter('Sword');
   }
 });
 
