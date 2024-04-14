@@ -7,6 +7,7 @@ window.addEventListener(
     bag: [],
     weapons: [],
     coins: 10,
+    coinss: 10,
   })
 )
 
