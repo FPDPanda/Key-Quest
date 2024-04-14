@@ -1,204 +1,226 @@
 /* Resetting the browser properties */
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 
-    font-size: 16px;
-    font-family: 'Texturina', sans-serif;
-    box-sizing: border-box;
+  font-size: 16px;
+  font-family: 'Texturina', sans-serif;
+  box-sizing: border-box;
 }
 
 main {
-    height: 100vh;
-    width: 100vw;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 100vh;
+  width: 100vw;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .game {
-    width: 100%;
-    height: 100%;
-    background-image: url("../images/bg/night-forest.png");
-    background-size: cover;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/bg/night-forest.png');
+  background-size: cover;
 
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas: "explore tavern armory"
-                          "stats stats player";
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    'explore tavern armory'
+    'stats stats player';
 }
 
-#button__explore {grid-area: explore}
-#button__tavern {grid-area: tavern}
-#button__armory {grid-area: armory}
-#player {grid-area: player;}
+#button__explore {
+  grid-area: explore;
+}
+#button__tavern {
+  grid-area: tavern;
+}
+#button__armory {
+  grid-area: armory;
+}
+#player {
+  grid-area: player;
+}
 
 #stats {
-    grid-area: stats;
-    justify-self: center;
-    margin-left: 4vw;
+  grid-area: stats;
+  justify-self: center;
+  margin-left: 4vw;
 
-    display: grid;
-    grid-template-columns: repeat(3,1fr 8fr);
-    grid-template-areas: "statsTitle statsTitle"
-                         "healthImg  health" 
-                         "coinsImg   coins"
-                         "weaponImg  weapon";
-    align-items: center;
-    align-self: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr 8fr);
+  grid-template-areas:
+    'statsTitle statsTitle'
+    'healthImg  health'
+    'coinsImg   coins'
+    'weaponImg  weapon';
+  align-items: center;
+  align-self: center;
 
-    padding: 1rem;
-    margin-left: 4vw;
+  padding: 1rem;
+  margin-left: 4vw;
 
-    min-width: 165px;
-    width: clamp(110px, 60vw, 50%);
-    max-height: 80%;
-    background-color: white;
+  min-width: 165px;
+  width: clamp(110px, 60vw, 50%);
+  max-height: 80%;
+  background-color: white;
 
-    border-radius: 20px;
+  border-radius: 20px;
 }
 
 #stats img {
-    margin-left: 1vw;
+  margin-left: 1vw;
 
-    height: clamp(5vh, 6vh, 10vh);
+  height: clamp(5vh, 6vh, 10vh);
 }
 
 #stats text {
-    font-size: clamp(0.5rem, 2rem, 3rem);
-    margin-left: 1vw;
+  font-size: clamp(0.5rem, 2rem, 3rem);
+  margin-left: 1vw;
 
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 #stats__title {
-    grid-area: statsTitle;
-    text-align: center;
+  grid-area: statsTitle;
+  text-align: center;
 }
 
 #stats__title__text {
-    font-size: 2rem;
-    margin-bottom: 1vh;
+  font-size: 2rem;
+  margin-bottom: 1vh;
 }
 
-#stats__health__image {grid-area: healthImg;}
-#stats__health {grid-area: health;}
-#stats__coins__image {grid-area: coinsImg;}
-#stats__coins {grid-area: coins;}
-#stats__weapon__image {grid-area: weaponImg;}
-#stats__weapon {grid-area: weapon;}
+#stats__health__image {
+  grid-area: healthImg;
+}
+#stats__health {
+  grid-area: health;
+}
+#stats__coins__image {
+  grid-area: coinsImg;
+}
+#stats__coins {
+  grid-area: coins;
+}
+#stats__weapon__image {
+  grid-area: weaponImg;
+}
+#stats__weapon {
+  grid-area: weapon;
+}
 
 /* Button styles */
 a {
-    text-decoration: none;
-    border-radius: 2rem;
-    
-    width: clamp(150px, 30vw, 35vw);
-    height: 30vh;
+  text-decoration: none;
+  border-radius: 2rem;
 
-    display: flex;
-    justify-self: center;
-    align-self: center;
+  width: clamp(150px, 30vw, 35vw);
+  height: 30vh;
+
+  display: flex;
+  justify-self: center;
+  align-self: center;
 }
 
 .button {
-    padding: 1rem;
-    border: 4px solid #888;
-    background-color: #fff;
-    height: 100%;
-    width: 100%;
+  padding: 1rem;
+  border: 4px solid #888;
+  background-color: #fff;
+  height: 100%;
+  width: 100%;
 
-    border-radius: 2rem;
+  border-radius: 2rem;
 
-    align-items: center;
-    justify-content: center;
-    display: flex;
+  align-items: center;
+  justify-content: center;
+  display: flex;
 
-    transition-duration: 0.3s;
+  transition-duration: 0.3s;
 
-    overflow: clip;
+  overflow: clip;
 }
 
 .button img {
-    height: clamp(5vh, 10vh, 15vh);
-    max-width: 20vw;
-    width: auto;
+  height: clamp(5vh, 10vh, 15vh);
+  max-width: 20vw;
+  width: auto;
 
-    margin-right: 2vw;
-    
-    transition-duration: 0.2s;
+  margin-right: 2vw;
+
+  transition-duration: 0.2s;
 }
 
 .button text {
-    font-size: 2.2rem
+  font-size: 2.2rem;
 }
-
 
 /* MEDIA QUERIES */
 
 /* Medium-sized Screen */
 @media (max-width: 1000px) {
-    /* Buttons */
-    .button {
-        flex-direction: column;
+  /* Buttons */
+  .button {
+    flex-direction: column;
 
-        overflow: hidden;
-    }
+    overflow: hidden;
+  }
 
-    .button img {
-        margin: 0;
-    }
+  .button img {
+    margin: 0;
+  }
 
-    .button text {
-        font-size: 2rem;
-        margin-top: 1vh;
-    }
+  .button text {
+    font-size: 2rem;
+    margin-top: 1vh;
+  }
 }
 
 @media (max-height: 500px) {
-    .button img {
-        display: none;
-    }
+  .button img {
+    display: none;
+  }
 }
 
 /* Small-sized Screen */
 @media (max-width: 700px) {
-    .game {
-        padding: 4vh 1vh 0 1vh;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 9vh 9vh 9vh 65vh;
-        row-gap: 1vh;
-        grid-template-areas: "explore explore"
-                             "tavern tavern"
-                             "armory armory"
-                             "stats player";
+  .game {
+    padding: 4vh 1vh 0 1vh;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 9vh 9vh 9vh 65vh;
+    row-gap: 1vh;
+    grid-template-areas:
+      'explore explore'
+      'tavern tavern'
+      'armory armory'
+      'stats player';
 
-        overflow: hidden;
-    }
+    overflow: hidden;
+  }
 
-    a {
-        height: 100%;
-        width: 100%;
-    }
+  a {
+    height: 100%;
+    width: 100%;
+  }
 
-    .button {
-        flex-direction: initial;
-    }
-    
-    .button img {
-        height: 6vh;
-        margin-right: 6vw;
-    
-        transition-duration: 0.2s;
-    }
-    
-    .button text {
-        font-size: 2.2rem
-    }
+  .button {
+    flex-direction: initial;
+  }
 
-    #stats {
-        width: 100%;
-    }
+  .button img {
+    height: 6vh;
+    margin-right: 6vw;
+
+    transition-duration: 0.2s;
+  }
+
+  .button text {
+    font-size: 2.2rem;
+  }
+
+  #stats {
+    width: 100%;
+  }
 }
