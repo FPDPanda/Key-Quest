@@ -1,63 +1,63 @@
 /* SLIGHT SHAKE ANIMATION */
 .button:hover {
-    transform: translateY(-0.5rem);
+  transform: translateY(-0.5rem);
 
-    background-color: #dddddd;
-    box-shadow: 0 0.5rem 2px -2px #888;
+  background-color: #dddddd;
+  box-shadow: 0 0.5rem 2px -2px #888;
 
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .button text:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .button img:hover {
-    transform: rotate(-6deg)
+  transform: rotate(-6deg);
 }
 
 /* SLIGHT RAISE + BOX SHADOW ANIMATION */
 .raise:hover {
-    transition-duration: 0.3s;
-    transform: translateY(-0.5rem);
+  transition-duration: 0.3s;
+  transform: translateY(-0.5rem);
 
-    border: 2px solid red;
+  border: 2px solid red;
 
-    box-shadow: 0 0.5rem 2px -2px red;
+  box-shadow: 0 0.5rem 2px -2px red;
 
-    cursor: pointer;
+  cursor: pointer;
 
-    transition-duration: 0.3s;
+  transition-duration: 0.3s;
 }
 
-.raise img:hover {    
-    transform: translateY(-0.5rem);
-    transition-duration: 0.3s;
+.raise img:hover {
+  transform: translateY(-0.5rem);
+  transition-duration: 0.3s;
 }
 
 /* TRANSFORM ANIMATION */
 .transform-box {
-    overflow: hidden;
-    height: 55%;
+  overflow: hidden;
+  height: 55%;
 
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .transform {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
 
-    gap: 10px;
-    transition: 1.5s;
+  gap: 10px;
+  transition: 1.5s;
 }
 
 .transform img {
-    width: clamp(90px, 80%, 130px);
+  width: clamp(90px, 80%, 130px);
 }
 
 .transform:hover {
-    transform: translateY(-100%);
+  transform: translateY(-100%);
 }
