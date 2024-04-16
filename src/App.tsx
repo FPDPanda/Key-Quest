@@ -4,7 +4,7 @@ import MoveToAreaButton from "./components/MoveToAreaButton/MoveToAreaButton";
 
 function App() {
   return (
-    <div className="App">
+    <div className="game">
       <MoveToAreaButton
         id="explore"
         text="Explore"
