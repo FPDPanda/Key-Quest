@@ -1,23 +1,23 @@
 import React from "react";
 import "./App.css";
-import Button from "./components/Button/Button";
+import MoveToAreaButton from "./components/MoveToAreaButton/MoveToAreaButton";
 
 function App() {
   return (
     <div className="App">
-      <Button
+      <MoveToAreaButton
         id="explore"
         text="Explore"
         imageSource="./images/icons/explore.png"
         alternativeText="crossed swords"
       />
-      <Button
+      <MoveToAreaButton
         id="tavern"
         text="Tavern"
         imageSource="./images/icons/tavern.png"
         alternativeText="beer mug"
       />
-      <Button
+      <MoveToAreaButton
         id="armory"
         text="Armory"
         imageSource="./images/icons/armory.png"

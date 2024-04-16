@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const LinkWrapper = styled.a`
+export const MoveToAreaButtonLinkWrapper = styled.a`
   text-decoration: none;
   border-radius: 2rem;
 
@@ -21,7 +21,7 @@ export const LinkWrapper = styled.a`
   }
 `;
 
-export const ButtonWrapper = styled.button`
+export const MoveToAreaButtonWrapper = styled.button`
   padding: 1rem;
   border: 4px solid #888;
   background-color: #fff;
@@ -39,7 +39,7 @@ export const ButtonWrapper = styled.button`
   overflow: clip;
 `;
 
-export const ButtonIconWrapper = styled.img`
+export const MoveToAreaButtonIconWrapper = styled.img`
   height: clamp(5vh, 10vh, 15vh);
   max-width: 20vw;
   width: auto;
@@ -53,7 +53,7 @@ export const ButtonIconWrapper = styled.img`
   }
 `;
 
-export const ButtonTextWrapper = styled.div`
+export const MoveToAreaButtonTextWrapper = styled.div`
   font-size: 2.2rem;
 
   :hover {
