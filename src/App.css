@@ -1,3 +1,17 @@
+.App {
+  width: 100%;
+  height: 100%;
+  background-image: url("../public/images/bg/night-forest.png");
+  background-size: cover;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "explore tavern armory"
+    "stats stats player";
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
