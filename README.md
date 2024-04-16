@@ -5,4 +5,4 @@ It is a solo project but one that i am developing with a lot of care.
 
 # Link
 
-https://fpdpanda.github.io/Key-Quest/
+I will host the react version of the game on firebase as soon as it is playable again.
