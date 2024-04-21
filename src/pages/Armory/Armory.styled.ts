@@ -9,13 +9,13 @@ export const ArmoryWrapper = styled.div`
   display: grid;
   grid-template-rows: 1.8fr 7fr 1.2fr;
   grid-template-areas:
-    "box"
-    "wpns"
+    "text"
+    "weapons"
     "return";
 
   /* Text Bubble styles*/
   .bubble {
-    grid-area: box;
+    grid-area: text;
 
     height: 100%;
     width: 100%;
@@ -37,6 +37,10 @@ export const ArmoryWrapper = styled.div`
     }
   }
 
+  @media (max-width: 500px) {
+    background-size: 300px;
+  }
+
   /* Button styles */
   #returnContainer {
     grid-area: return;
@@ -46,14 +50,10 @@ export const ArmoryWrapper = styled.div`
     width: min(90%, 400px);
     height: min(90%, 90px);
   }
-
-  @media (max-width: 500px) {
-    background-size: 300px;
-  }
 `;
 
 export const ArmoryItemsWrapper = styled.div`
-  grid-area: wpns;
+  grid-area: weapons;
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
