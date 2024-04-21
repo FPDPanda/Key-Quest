@@ -1,0 +1,172 @@
+/* Resetting the browser properties */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-size: 16px;
+  font-family: "Texturina", sans-serif;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game {
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/bg/wooden-wall.png");
+
+  display: grid;
+  grid-template-rows: 18vh 70vh 10vh;
+  grid-template-areas:
+    "box"
+    "weapons"
+    "return";
+}
+
+/* Text Bubble styles*/
+.bubble {
+  grid-area: box;
+
+  height: clamp(150px, 30%, 20vh);
+  width: 100%;
+  background: rgb(204, 204, 204, 0.2);
+  border-radius: 1.2rem;
+  padding: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#bubble__text {
+  padding: 1.2rem;
+  height: 100%;
+  border-radius: 2rem;
+  background-color: #fff;
+
+  overflow-y: auto;
+}
+
+/* Weapons area */
+.weapons {
+  grid-area: weapons;
+
+  height: 65vh;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 60vh;
+}
+
+.weapon__rack {
+  justify-self: center;
+  align-self: center;
+  width: clamp(135px, 30%, 30vh);
+
+  background: url("../images/bg/wooden-racks.jpg");
+  color: #ffff42;
+  border: 2px solid #fff;
+  border-radius: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.weapon__rack img {
+  max-height: 80%;
+  transition-duration: 0.5s;
+}
+
+#dagger {
+  height: 45%;
+}
+
+#sword {
+  height: 80%;
+}
+
+#axe {
+  height: 60%;
+}
+
+.price {
+  width: clamp(50px, 25%, 5vw);
+  height: clamp(19px, 10%, 3vh);
+  font-family: Georgia, "Times New Roman", Times, serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.price img {
+  margin-left: 0.3vw;
+}
+
+/* Button styles */
+#returnContainer {
+  grid-area: return;
+  justify-self: center;
+  text-decoration: none;
+
+  width: 400px;
+  height: 10vh;
+  min-height: 50px;
+}
+
+.button {
+  padding: 1rem;
+  border: 2px solid #888;
+  color: #fff;
+  background-color: #f44;
+  height: 100%;
+  width: 100%;
+
+  border-radius: 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  transition-duration: 0.3s;
+
+  overflow: clip;
+}
+
+.button img {
+  height: 10vh;
+  width: auto;
+
+  transition-duration: 0.2s;
+}
+
+.button text {
+  font-size: 2.2rem;
+}
+
+@media (max-width: 500px) {
+  .game {
+    background-size: 300px;
+  }
+  .weapons {
+    grid-template-columns: 50vw 50vw;
+    grid-template-rows: 35vh 35vh;
+  }
+  #returnContainer {
+    width: 70%;
+  }
+}

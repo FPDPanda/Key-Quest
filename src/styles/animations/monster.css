@@ -1,0 +1,7 @@
+#monster {
+  background-repeat: no-repeat;
+  background-position: center bottom 1.5vh;
+  transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+}
+/*# sourceMappingURL=monster.css.map */
