@@ -1,6 +1,8 @@
 import React from "react";
 import "./App.css";
 import MoveToAreaButton from "./components/MoveToAreaButton/MoveToAreaButton";
+import PlayerStats from "./components/PlayerStats/PlayerStats";
+import Player from "./components/Player/Player";
 
 function App() {
   return (
@@ -23,6 +25,8 @@ function App() {
         imageSource="./images/icons/armory.png"
         alternativeText="hammer"
       />
+      <PlayerStats />
+      <Player imageSource="./images/character/knight.gif" />
     </div>
   );
 }
