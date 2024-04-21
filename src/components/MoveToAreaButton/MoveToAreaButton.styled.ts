@@ -1,34 +1,5 @@
 import styled from "styled-components";
 
-export const MoveToAreaButtonLinkWrapper = styled.a<{ $gridArea: string }>`
-  grid-area: ${(props) => props.$gridArea};
-
-  text-decoration: none;
-  border-radius: 2rem;
-
-  width: clamp(150px, 30vw, 35vw);
-  height: 30vh;
-
-  justify-self: center;
-  align-self: center;
-
-  transition-duration: 0.3s;
-
-  overflow: clip;
-
-  &:hover {
-    transform: translateY(-0.5rem);
-
-    background-color: #dddddd;
-    box-shadow: 0 0.5rem 2px -2px #888;
-  }
-
-  @media (max-width: 700px) {
-    height: 100%;
-    width: 100%;
-  }
-`;
-
 export const MoveToAreaButtonWrapper = styled.button`
   padding: 1rem;
   border: 4px solid #888;
