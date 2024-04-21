@@ -13,23 +13,21 @@ interface MoveToAreaButtonProps {
   alternativeText: string;
 }
 
-const Button: FC<MoveToAreaButtonProps> = ({
+const MoveToAreaButton: FC<MoveToAreaButtonProps> = ({
   id,
   text,
   imageSource,
   alternativeText,
 }) => (
-  <MoveToAreaButtonLinkWrapper id={`button__ ${id}`} href="https://google.com">
+  <MoveToAreaButtonLinkWrapper gridArea={id} href="https://google.com">
     <MoveToAreaButtonWrapper className="button">
       <MoveToAreaButtonIconWrapper
         src={imageSource}
         alt={alternativeText}
       ></MoveToAreaButtonIconWrapper>
-      <MoveToAreaButtonTextWrapper id={`button__${id}__text`}>
-        {text}
-      </MoveToAreaButtonTextWrapper>
+      <MoveToAreaButtonTextWrapper>{text}</MoveToAreaButtonTextWrapper>
     </MoveToAreaButtonWrapper>
   </MoveToAreaButtonLinkWrapper>
 );
 
-export default Button;
+export default MoveToAreaButton;

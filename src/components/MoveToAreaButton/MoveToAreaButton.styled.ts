@@ -1,23 +1,26 @@
 import styled from "styled-components";
 
-export const MoveToAreaButtonLinkWrapper = styled.a`
+export const MoveToAreaButtonLinkWrapper = styled.a<{ gridArea: string }>`
+  grid-area: ${(props) => props.gridArea};
+
   text-decoration: none;
   border-radius: 2rem;
 
   width: clamp(150px, 30vw, 35vw);
   height: 30vh;
 
-  display: flex;
   justify-self: center;
   align-self: center;
 
-  :hover {
+  transition-duration: 0.3s;
+
+  overflow: clip;
+
+  &:hover {
     transform: translateY(-0.5rem);
 
     background-color: #dddddd;
     box-shadow: 0 0.5rem 2px -2px #888;
-
-    cursor: pointer;
   }
 `;
 
@@ -34,9 +37,9 @@ export const MoveToAreaButtonWrapper = styled.button`
   justify-content: center;
   display: flex;
 
-  transition-duration: 0.3s;
-
-  overflow: clip;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const MoveToAreaButtonIconWrapper = styled.img`
@@ -48,7 +51,7 @@ export const MoveToAreaButtonIconWrapper = styled.img`
 
   transition-duration: 0.2s;
 
-  :hover {
+  &:hover {
     transform: rotate(-6deg);
   }
 `;
@@ -56,7 +59,7 @@ export const MoveToAreaButtonIconWrapper = styled.img`
 export const MoveToAreaButtonTextWrapper = styled.div`
   font-size: 2.2rem;
 
-  :hover {
+  &:hover {
     text-decoration: underline;
   }
 `;
