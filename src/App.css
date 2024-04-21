@@ -23,39 +23,6 @@
     "stats stats player";
 }
 
-@media (max-width: 900px) {
-  #player {
-    background-position: right bottom 1.5vh;
-  }
-}
-
-/* MEDIA QUERIES */
-
-/* Medium-sized Screen */
-@media (max-width: 1000px) {
-  /* Buttons */
-  .button {
-    flex-direction: column;
-
-    overflow: hidden;
-  }
-
-  .button img {
-    margin: 0;
-  }
-
-  .button text {
-    font-size: 2rem;
-    margin-top: 1vh;
-  }
-}
-
-@media (max-height: 500px) {
-  .button img {
-    display: none;
-  }
-}
-
 /* Small-sized Screen */
 @media (max-width: 700px) {
   .game {
@@ -70,29 +37,5 @@
       "stats player";
 
     overflow: hidden;
-  }
-
-  a {
-    height: 100%;
-    width: 100%;
-  }
-
-  .button {
-    flex-direction: initial;
-  }
-
-  .button img {
-    height: 6vh;
-    margin-right: 6vw;
-
-    transition-duration: 0.2s;
-  }
-
-  .button text {
-    font-size: 2.2rem;
-  }
-
-  #stats {
-    width: 100%;
   }
 }
