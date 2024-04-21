@@ -19,7 +19,7 @@ const MoveToAreaButton: FC<MoveToAreaButtonProps> = ({
   imageSource,
   alternativeText,
 }) => (
-  <MoveToAreaButtonLinkWrapper gridArea={id} href="https://google.com">
+  <MoveToAreaButtonLinkWrapper href="https://google.com" $gridArea={id}>
     <MoveToAreaButtonWrapper className="button">
       <MoveToAreaButtonIconWrapper
         src={imageSource}

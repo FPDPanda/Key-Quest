@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-export const MoveToAreaButtonLinkWrapper = styled.a<{ gridArea: string }>`
-  grid-area: ${(props) => props.gridArea};
+export const MoveToAreaButtonLinkWrapper = styled.a<{ $gridArea: string }>`
+  grid-area: ${(props) => props.$gridArea};
 
   text-decoration: none;
   border-radius: 2rem;
@@ -22,6 +22,11 @@ export const MoveToAreaButtonLinkWrapper = styled.a<{ gridArea: string }>`
     background-color: #dddddd;
     box-shadow: 0 0.5rem 2px -2px #888;
   }
+
+  @media (max-width: 700px) {
+    height: 100%;
+    width: 100%;
+  }
 `;
 
 export const MoveToAreaButtonWrapper = styled.button`
@@ -40,6 +45,16 @@ export const MoveToAreaButtonWrapper = styled.button`
   &:hover {
     cursor: pointer;
   }
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+
+    overflow: hidden;
+  }
+
+  @media (max-width: 700px) {
+    flex-direction: initial;
+  }
 `;
 
 export const MoveToAreaButtonIconWrapper = styled.img`
@@ -54,6 +69,17 @@ export const MoveToAreaButtonIconWrapper = styled.img`
   &:hover {
     transform: rotate(-6deg);
   }
+
+  @media (max-width: 1000px) {
+    margin: 0;
+  }
+
+  @media (max-width: 700px) {
+    height: 6vh;
+    margin-right: 6vw;
+
+    transition-duration: 0.2s;
+  }
 `;
 
 export const MoveToAreaButtonTextWrapper = styled.div`
@@ -61,5 +87,15 @@ export const MoveToAreaButtonTextWrapper = styled.div`
 
   &:hover {
     text-decoration: underline;
+  }
+
+  @media (max-width: 1000px) {
+    font-size: 2rem;
+    margin-top: 1vh;
+  }
+
+  @media (max-width: 700px) {
+    font-size: 2.2rem;
+    margin: 0;
   }
 `;
