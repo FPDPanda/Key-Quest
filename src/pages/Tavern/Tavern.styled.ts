@@ -1,23 +1,21 @@
 import styled from "styled-components";
 
-export const ArmoryWrapper = styled.div`
+export const TavernWrapper = styled.div`
   width: 100vw;
   height: 100vh;
   background-image: url("../images/bg/wooden-wall.png");
-  background-size: 500px;
 
   display: grid;
-  grid-template-rows: 1.8fr 7fr 1.2fr;
+  grid-template-rows: 18vh 70vh 10vh;
   grid-template-areas:
     "text"
-    "weapons"
+    "items"
     "return";
 
-  /* Text Bubble styles*/
   .bubble {
     grid-area: text;
 
-    height: 100%;
+    height: clamp(150px, 30%, 20vh);
     width: 100%;
     background: rgb(204, 204, 204, 0.2);
     border-radius: 1.2rem;
@@ -26,19 +24,15 @@ export const ArmoryWrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
-    p {
-      padding: 1.2rem;
-      height: 100%;
-      border-radius: 2rem;
-      background-color: #fff;
-
-      overflow-y: auto;
-    }
   }
 
-  @media (max-width: 500px) {
-    background-size: 300px;
+  #bubble__text {
+    padding: 1.2rem;
+    height: 100%;
+    border-radius: 2rem;
+    background-color: #fff;
+
+    overflow-y: auto;
   }
 
   /* Button styles */
@@ -50,51 +44,60 @@ export const ArmoryWrapper = styled.div`
     width: min(90%, 400px);
     height: min(90%, 90px);
   }
-`;
-
-export const ArmoryItemsWrapper = styled.div`
-  grid-area: weapons;
-
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
 
   @media (max-width: 500px) {
-    grid-template-columns: 50vw 50vw;
-    grid-template-rows: 35vh 35vh;
+    background-size: 300px;
+
+    #returnContainer {
+      width: 70%;
+    }
   }
 `;
 
-export const ArmoryItemWrapper = styled.div`
+export const TavernItemsWrapper = styled.div`
+  grid-area: items;
+
+  height: 65vh;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 60vh;
+`;
+
+export const TavernItemWrapper = styled.a<{ $backgroundColor: string }>`
   justify-self: center;
   align-self: center;
-  height: min(90%, 350px);
-  width: min(80%, 150px);
+  width: clamp(135px, 40%, 30vh);
+  height: 230px;
 
-  border: 2px solid #fff;
+  color: #ffff42;
+  border: 2px solid #000;
   border-radius: 20px;
 
-  background: url("../images/bg/wooden-racks.jpg");
-  color: #ffff42;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  transition-duration: 0.3s;
+  background-color: ${(props) => props.$backgroundColor};
 
   &:hover {
+    transition-duration: 0.3s;
     transform: translateY(-0.5rem);
+
     border: 2px solid red;
 
     box-shadow: 0 0.5rem 2px -2px red;
 
     cursor: pointer;
+
+    transition-duration: 0.3s;
   }
 `;
 
-export const ArmoryItemImageWrapper = styled.img`
-  max-height: 80%;
-  transition-duration: 0.5s;
+export const TavernItemImageWrapper = styled.img`
+  width: clamp(90px, 40%, 45%);
+  margin: 1vh 0;
 
   &:hover {
     transform: translateY(-0.5rem);
@@ -102,7 +105,7 @@ export const ArmoryItemImageWrapper = styled.img`
   }
 `;
 
-export const ArmoryItemPriceWrapper = styled.div`
+export const TavernItemPriceWrapper = styled.div`
   width: clamp(50px, 25%, 5vw);
   height: clamp(19px, 10%, 3vh);
   display: flex;
