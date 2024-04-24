@@ -38,11 +38,11 @@ export const ReturnButtonWrapper = styled.button`
     cursor: pointer;
   }
 
-  & span:hover {
+  span:hover {
     text-decoration: underline;
   }
 
-  & img:hover {
+  img:hover {
     transform: rotate(-6deg);
   }
 `;
