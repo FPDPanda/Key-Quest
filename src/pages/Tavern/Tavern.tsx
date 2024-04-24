@@ -43,7 +43,7 @@ const Tavern: FC<TavernProps> = () => (
         </TavernItemPriceWrapper>
       </TavernItemWrapper>
 
-      <TavernItemWrapper $backgroundColor="#EB4435">
+      <TavernItemWrapper $backgroundColor="#f05446">
         <span>Increase HP</span>
         <TavernItemImageWrapper
           src="./images/icons/hp-up.png"

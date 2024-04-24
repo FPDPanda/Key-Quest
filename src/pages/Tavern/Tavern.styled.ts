@@ -71,7 +71,7 @@ export const TavernItemWrapper = styled.a<{ $backgroundColor: string }>`
   height: 230px;
 
   color: #ffff42;
-  border: 2px solid #000;
+  border: 2px solid white;
   border-radius: 20px;
 
   display: flex;
@@ -85,9 +85,9 @@ export const TavernItemWrapper = styled.a<{ $backgroundColor: string }>`
     transition-duration: 0.3s;
     transform: translateY(-0.5rem);
 
-    border: 2px solid red;
+    border: 2px solid white;
 
-    box-shadow: 0 0.5rem 2px -2px red;
+    box-shadow: 0 0.5rem 2px -2px white;
 
     cursor: pointer;
 

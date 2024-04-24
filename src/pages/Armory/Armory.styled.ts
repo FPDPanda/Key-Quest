@@ -84,9 +84,9 @@ export const ArmoryItemWrapper = styled.div`
 
   &:hover {
     transform: translateY(-0.5rem);
-    border: 2px solid red;
+    border: 2px solid white;
 
-    box-shadow: 0 0.5rem 2px -2px red;
+    box-shadow: 0 0.5rem 2px -2px white;
 
     cursor: pointer;
   }
