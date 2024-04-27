@@ -21,6 +21,10 @@ class PlayerFeature {
     return this.player;
   }
 
+  getPlayerWeapons() {
+    return this.player.weapons;
+  }
+
   updatePlayerCoins(value: number): boolean {
     if (this.player.coins + value < 0) {
       return false;
