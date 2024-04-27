@@ -37,7 +37,7 @@ const PlayerStats: FC<PlayerStatsProps> = function () {
         src="./images/icons/dagger.png"
       />
       <PlayerStatsStatText $gridArea="weaponText" color="grey">
-        {player.weapons[0]}
+        {player.weapons[player.weapons.length - 1]}
       </PlayerStatsStatText>
     </PlayerStatsWrapper>
   );
