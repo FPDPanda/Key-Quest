@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import {
+  PlayerHealthValueText,
   PlayerStatsStatImage,
   PlayerStatsStatText,
   PlayerStatsTitleArea,
@@ -13,6 +14,14 @@ interface PlayerStatsProps {}
 const PlayerStats: FC<PlayerStatsProps> = function () {
   const player = playerFeature.getPlayer();
 
+  const getCurrentHealthColor = () => {
+    if (player.stats.currentHealth < player.stats.maxHealth) {
+      return "red";
+    } else {
+      return "black";
+    }
+  };
+
   return (
     <PlayerStatsWrapper>
       <PlayerStatsTitleArea>
@@ -22,8 +31,14 @@ const PlayerStats: FC<PlayerStatsProps> = function () {
         $gridArea="healthImg"
         src="./images/icons/heart.png"
       />
-      <PlayerStatsStatText $gridArea="healthText" color="black">
-        {player.stats.currentHealth}/{player.stats.maxHealth}
+      <PlayerStatsStatText $gridArea="healthText">
+        <PlayerHealthValueText color={getCurrentHealthColor()}>
+          {player.stats.currentHealth}
+        </PlayerHealthValueText>
+        /
+        <PlayerHealthValueText color="black">
+          {player.stats.maxHealth}
+        </PlayerHealthValueText>
       </PlayerStatsStatText>
       <PlayerStatsStatImage
         $gridArea="coinsImg"

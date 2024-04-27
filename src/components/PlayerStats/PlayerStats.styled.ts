@@ -51,12 +51,21 @@ export const PlayerStatsStatImage = styled.img<{ $gridArea: string }>`
 
 export const PlayerStatsStatText = styled.p<{
   $gridArea: string;
-  color: string;
+  color?: string;
 }>`
   grid-area: ${(props) => props.$gridArea};
   color: ${(props) => props.color};
 
   font-size: clamp(0.5rem, 2rem, 3rem);
   margin-left: 1vw;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+`;
+
+export const PlayerHealthValueText = styled.span<{
+  color: string;
+}>`
+  color: ${(props) => props.color};
+
+  font-size: clamp(0.5rem, 2rem, 3rem);
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 `;
