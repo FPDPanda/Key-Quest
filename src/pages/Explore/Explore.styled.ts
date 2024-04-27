@@ -114,6 +114,14 @@ export const ExploreButtonWrapper = styled.button`
 
   overflow: clip;
 
+  span {
+    font-size: 2.2rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
   &:hover {
     transform: translateY(-0.5rem);
 
@@ -148,10 +156,18 @@ export const EscapeButtonWrapper = styled.button`
     width: auto;
 
     transition-duration: 0.2s;
+
+    &:hover {
+      transform: rotate(-6deg);
+    }
   }
 
   span {
     font-size: 2.2rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   &:hover {
@@ -160,14 +176,6 @@ export const EscapeButtonWrapper = styled.button`
     box-shadow: 0 0.5rem 2px -2px #888;
 
     cursor: pointer;
-  }
-
-  span:hover {
-    text-decoration: underline;
-  }
-
-  img:hover {
-    transform: rotate(-6deg);
   }
 
   @media (max-width: 900px) {
