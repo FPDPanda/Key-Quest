@@ -6,6 +6,7 @@ export const MainPageWrapper = styled.div`
 
   background-image: url("./images/bg/night-forest.png");
   background-size: cover;
+  background-position: bottom;
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
