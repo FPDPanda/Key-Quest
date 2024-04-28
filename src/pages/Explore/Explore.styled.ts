@@ -5,7 +5,7 @@ export const ExploreWrapper = styled.div`
   height: 100vh;
   background-image: url("./images/bg/night-forest.png");
   background-size: cover;
-  background-repeat: repeat-x;
+  background-position: bottom;
 
   display: grid;
   grid-template-rows: 1fr 2fr 2fr;
@@ -51,14 +51,6 @@ export const ExploreWrapper = styled.div`
     text-decoration: none;
   }
 
-  /* Monster area styling */
-  #monster {
-    grid-area: monster;
-    justify-self: right;
-    width: 30vw;
-  }
-
-  /* Media queries */
   @media (max-width: 900px) {
     overflow: hidden;
     grid-template-rows: 3fr 1fr 3fr;
@@ -83,10 +75,6 @@ export const ExploreWrapper = styled.div`
       margin: 0;
       align-self: center;
       justify-content: center;
-    }
-
-    #monster {
-      width: 100%;
     }
   }
 
@@ -184,5 +172,18 @@ export const EscapeButtonWrapper = styled.button`
     img {
       display: none;
     }
+  }
+`;
+
+export const MonsterWrapper = styled.div<{ $imageUrl: string }>`
+  height: 90%;
+  grid-area: monster;
+  background-image: url(${(props) => props.$imageUrl});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  @media (max-width: 900px) {
+    width: 100%;
   }
 `;
