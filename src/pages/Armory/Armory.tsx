@@ -17,7 +17,7 @@ interface ArmoryItem {
   imageUrl: string;
 }
 
-const Armory: FC<ArmoryProps> = function () {
+const Armory: FC<ArmoryProps> = () => {
   const [, forceUpdate] = useReducer((x) => x + 1, 0);
 
   const armoryItems: ArmoryItem[] = [

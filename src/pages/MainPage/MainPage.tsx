@@ -5,7 +5,7 @@ import MoveToAreaButton from "../../components/MoveToAreaButton/MoveToAreaButton
 import PlayerStats from "../../components/PlayerStats/PlayerStats";
 import Player from "../../components/Player/Player";
 
-const MainPage: FC = function () {
+const MainPage: FC = () => {
   return (
     <MainPageWrapper>
       <Link id="explore" to="/explore">

@@ -8,17 +8,30 @@ class PlayerFeature {
     if (savedPlayer) {
       this.player = savedPlayer;
     } else {
-      this.player = {
-        bag: [],
-        coins: 5,
-        weapons: [],
-        stats: { currentHealth: 5, maxHealth: 5 },
-      };
+      this.generateNewPlayer();
     }
+  }
+
+  generateNewPlayer() {
+    this.player = {
+      bag: [],
+      coins: 5,
+      weapons: [],
+      stats: { currentHealth: 5, maxHealth: 5 },
+    };
+    this.savePlayerInCache();
   }
 
   getPlayer() {
     return this.player;
+  }
+
+  getPlayerHealth() {
+    return this.player.stats.currentHealth;
+  }
+
+  getPlayerMaxHealth() {
+    return this.player.stats.maxHealth;
   }
 
   getPlayerWeapons() {
@@ -64,6 +77,10 @@ class PlayerFeature {
     const savedPlayer = localStorage.getItem("player");
 
     return JSON.parse(savedPlayer);
+  }
+
+  gameOver() {
+    this.generateNewPlayer();
   }
 }
 
