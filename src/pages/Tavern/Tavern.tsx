@@ -24,7 +24,7 @@ const secondSleepImage = {
   alt: "sun",
 };
 
-const Tavern: FC<TavernProps> = function () {
+const Tavern: FC<TavernProps> = () => {
   const buyHealthRefill = () => {
     if (playerFeature.updatePlayerCoins(-3)) {
       playerFeature.fillPlayerHealth();
