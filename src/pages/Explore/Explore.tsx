@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import {
   ExploreWrapper,
   ExploreButtonWrapper,
@@ -6,23 +6,59 @@ import {
   MonsterWrapper,
 } from "./Explore.styled";
 import { Link } from "react-router-dom";
+import { FightText } from "../../types/fight-text";
 import monsterFeature from "../../features/Monster";
+import fightFeature from "../../features/Fight";
+import textFeature from "../../features/Text";
+import FightTextBox from "../../components/BoxText/FightTextBox";
 
 interface ExploreProps {}
 
-const Explore: FC<ExploreProps> = function () {
-  const monster = monsterFeature.getMonster();
-  monster.health = 0;
+const Explore: FC<ExploreProps> = () => {
+  const [monster, setMonster] = useState(monsterFeature.getMonster());
+
+  const inputText: FightText[] = [
+    textFeature.getMonsterEncounterText(monster.name),
+    textFeature.getLineBreak(),
+  ];
+
+  const [text, setText] = useState(inputText);
+
+  const updateInputText = (textUpdates: FightText[]) => {
+    const addText: FightText[] = [...textUpdates];
+
+    setText([...text, ...addText]);
+  };
+
+  const fight = () => {
+    const textUpdates = fightFeature.fight(monster);
+    updateInputText(textUpdates);
+
+    if (fightFeature.isMonsterDead()) {
+      findNewMonster(textUpdates);
+    }
+  };
+
+  const findNewMonster = (textUpdates: FightText[]) => {
+    monsterFeature.setRandomMonster();
+    setMonster(monsterFeature.getMonster());
+    textUpdates.push(
+      textFeature.getMonsterEncounterText(monsterFeature.getMonster().name),
+      textFeature.getLineBreak()
+    );
+    updateInputText(textUpdates);
+  };
 
   return (
     <ExploreWrapper>
       <div className="box">
-        <div id="box__text">
-          <p id="box__encounterText">You see a small green monster</p>
-        </div>
+        <FightTextBox inputText={text}></FightTextBox>
 
-        <ExploreButtonWrapper>
-          <span>Lutar</span>
+        <ExploreButtonWrapper onClick={() => findNewMonster([])}>
+          <span>Escape and find a new monster</span>
+        </ExploreButtonWrapper>
+        <ExploreButtonWrapper onClick={fight}>
+          <span>Fight</span>
         </ExploreButtonWrapper>
       </div>
 
