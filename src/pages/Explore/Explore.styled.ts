@@ -29,16 +29,6 @@ export const ExploreWrapper = styled.div`
     justify-content: space-between;
   }
 
-  #box__text {
-    grid-area: box;
-    padding: 2rem;
-    height: clamp(40vh, 60vh, 70vh);
-    border-radius: 2rem;
-    background-color: #fff;
-
-    overflow-y: auto;
-  }
-
   #escapeContainer {
     grid-area: escape;
     justify-self: right;
