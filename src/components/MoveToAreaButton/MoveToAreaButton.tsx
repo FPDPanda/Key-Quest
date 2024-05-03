@@ -9,14 +9,16 @@ interface MoveToAreaButtonProps {
   text: string;
   imageSource: string;
   alternativeText: string;
+  enabled?: boolean;
 }
 
 const MoveToAreaButton: FC<MoveToAreaButtonProps> = ({
   text,
   imageSource,
   alternativeText,
+  enabled = true,
 }) => (
-  <MoveToAreaButtonWrapper className="button">
+  <MoveToAreaButtonWrapper disabled={!enabled} className="button">
     <MoveToAreaButtonIconWrapper
       src={imageSource}
       alt={alternativeText}
